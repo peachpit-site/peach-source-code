@@ -1,0 +1,60 @@
+object FormResults: TFormResults
+  Left = 74
+  Height = 474
+  Top = 64
+  Width = 835
+  Caption = 'FormResults'
+  ClientHeight = 474
+  ClientWidth = 835
+  OnActivate = FormActivate
+  LCLVersion = '2.2.0.1'
+  object ClassBox: TComboBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 12
+    Height = 23
+    Top = 12
+    Width = 246
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    ItemHeight = 15
+    OnSelect = ClassBoxSelect
+    TabOrder = 0
+    Text = 'ClassBox'
+  end
+  object ResultsGrid: TStringGrid
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = ClassBox
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 12
+    Height = 415
+    Top = 47
+    Width = 811
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    Color = clWhite
+    Flat = True
+    TabOrder = 2
+  end
+  object ButtonRMS: TButton
+    AnchorSideLeft.Control = ClassBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = ClassBox
+    Left = 270
+    Height = 25
+    Top = 12
+    Width = 86
+    AutoSize = True
+    BorderSpacing.Left = 12
+    Caption = 'ButtonRMS'
+    OnClick = ButtonRMSClick
+    TabOrder = 1
+  end
+end

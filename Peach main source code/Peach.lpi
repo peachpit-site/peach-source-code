@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="Peach"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MinorVersionNr Value="10"/>
+      <RevisionNr Value="6"/>
+      <BuildNr Value="1"/>
+    </VersionInfo>
+    <BuildModes Count="2">
+      <Item1 Name="Debug" Default="True"/>
+      <Item2 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\Peach\Peach\Peach"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="Packages\WordMemo;Packages\PythonPackage;Packages\Peach"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="6">
+      <Item1>
+        <PackageName Value="richmemo_design"/>
+        <DefaultFilename Value="Packages\richmemo\ide\richmemo_design.lpk" Prefer="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="PeachPackage"/>
+        <DefaultFilename Value="Packages\Peach\PeachPackage.lpk" Prefer="True"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="WordMemo"/>
+        <DefaultFilename Value="Packages\WordMemo\wordmemo.lpk" Prefer="True"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="PythonPackage"/>
+        <DefaultFilename Value="Packages\PythonPackage\pythonpackage.lpk" Prefer="True"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="richmemopackage"/>
+        <DefaultFilename Value="Packages\richmemo\richmemopackage.lpk" Prefer="True"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
+    </RequiredPackages>
+    <Units Count="27">
+      <Unit0>
+        <Filename Value="Peach.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Main"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="searchandreplace.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormFind"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SearchAndReplace"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="appearanceoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAO"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AppearanceOptions"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="lockdownoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormLO"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LockdownOptions"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="publish.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormPublish"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Publish"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="qaunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormQA"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="QAUnit"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="signin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormSignIn"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SignIn"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="assignhomework.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAssignHomework"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AssignHomework"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="register.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRegister"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Register"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="studentclasses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormSClasses"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="StudentClasses"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="teacherclasses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormStudents"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TeacherClasses"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="testresults.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormResults"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TestResults"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="interposeredit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="InterposerEdit"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="iconupdater.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="IconUpdater"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="versionsupport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="VersionSupport"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="assignments.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAssignments"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Assignments"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="fontinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FontInfo"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="licenses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormLicenses"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Licenses"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="pythonfunctions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PythonFunctions"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Packages\WordMemo\wmemo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="WMemo"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="Packages\PythonPackage\pymemo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PyMemo"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="Packages\Peach\applanguage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AppLanguage"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="Packages\Peach\internet.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Internet"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="Packages\Peach\rminlinepicture.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RMInlinePicture"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="Packages\Peach\commonstringfunctions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CommonStringFunctions"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="Packages\Peach\vocab.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Vocab"/>
+      </Unit26>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="..\Peach\Peach\Peach"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="Packages\WordMemo;Packages\PythonPackage;Packages\Peach"/>
+      <UnitOutputDirectory Value="C:\Users\owner\Documents\Peach project\Peach main source code\lib\x86_64-win64"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,479 @@
+Hi! This is a .lng file for Peach. It consists of explanatory remarks, such as this one, and actual data.
+
+The data consists of lines separated into two halves by a space followed by a colon followed by another space.
+
+This, for example, is actual data, which you may need to change —
+
+Language : English (UK)
+Direction : ->
+
+Default body font : Cambria
+Default title font : Arbit
+Default base font size : 12
+
+Specifically, this is metadata which says what the language is called and the direction in which it is written, and the fonts to use as defaults. You should change those settings as necessary while leaving everything to the left of the colon STRICTLY ALONE, as those are keywords for the internal use of Peach.
+
+Similarly with the actual language data you should translate the phrase on the right, while leaving unchanged the keyword for it on the left. When you're finished, save the file in the Resources subfolder of Peach with a filename consisting of the name of your language and a .lng suffix.
+
+Where the keywords of data items are numbered, it is usually important that they be in the right order, i.e. the entry with keyword LS5 should be the first line of data after the one with keyword LS4. You can rearrange the order of the file otherwise, though I can't think why you'd want to.
+
+Good luck, and thanks for helping to make Peach more flexible.
+
+══════════════════════════════════════════════════════════
+
+This specifies how times and dates are displayed.
+
+Date format 1 : dd-mm-yyyy
+Date format 2 : ddd dd-mm-yyyy
+TimeAMString : am
+TimePMString : pm
+
+For the meaning of the date formats see https://www.freepascal.org/docs-html/rtl/sysutils/formatchars.html
+
+
+══════════════════════════════════════════════════════════
+
+
+The launcher:
+
+PbP : Powered by Peach
+Upd : Updates
+UpA : There are updates available. Do you want to download them?
+Det : Details:
+PerP : Permanent preferences
+Pref0 : Always download updates
+Pref1 : Never download updates
+Pref2 : Always ask permission
+Vers0 : Use latest version
+Vers1 : Use latest stable version
+
+══════════════════════════════════════════════════════════
+
+Entries for the menu bar.
+
+MFile : File
+MOpen : Open
+MSave : Save
+MSaveAs : Save as
+MRevert : Revert
+MNew : New
+MNFNS : New file, new settings
+MNFKS : New file, keep settings
+MPublish : Publish
+MClose : Close
+MExit : Exit
+NOWS : Expected subfolder 'Workspace' is missing.
+
+MOptions : Options
+MPO : Appearance options
+MLO : Lockdown options
+UPO : Update options
+
+MView : View
+MMS : Main screen
+MEV : Edit text
+MES : Edit settings
+MEGP : Edit grammar plugins
+MHelp : Help
+MATVL : About this .vcb file
+MHKS : Help with keyboard settings
+MATP : About this program
+
+MUser : User
+
+MUSU : Solo user
+MUS : Student
+MUMS : Multiple students
+MUT : Teacher
+MUDU : Dual user
+
+MClassroom : Classroom
+
+MCR : Register
+MCSI : Sign in
+MCSO : Sign out
+MCFP : I've forgotten my password
+MCCP : Change my password
+MCCE : Change my email address
+MCC : Classes
+MCN : Notifications
+MCA : Assignments
+MCMC : Manage classes
+MCAH : Assign work
+MCTS : Gradebook
+
+══════════════════════════════════════════════════════════
+
+Captions for the dialogs
+
+ODT : Open existing file
+SDT : Save file as
+GODT : Open grammar plugin
+GSDT : Save grammar plugin
+CDT : Select background colour
+
+══════════════════════════════════════════════════════════
+
+Now the text for the main screen.
+
+L5MS : Topics
+ButtonST : Click here to start practising the selected vocabulary
+ButPrac : Click here to practise
+ButAsm : Click to do the assignment
+ButAsmR : Click to redo the assignment
+ButAsmC : Click to close the assignment
+NOSELECT : You haven't selected a topic with vocab in it.
+NO4 : You need to have at least four vocabulary entries selected to use flashcard mode.
+UNTF : (untitled file)
+
+══════════════════════════════════════════════════════════
+
+Text for the Q&A form
+
+PRAC : Practice
+TEST : Assignment
+NOE : Click here for next question or press enter
+NOC : Click here for next question or click any flashcard
+QUIT : Quit practice
+REST : Restart practice
+SHOW : Show options
+HIDE : Hide options
+COMP : Practice complete!
+COMT : Assignment complete!
+SASM : Start assignment
+REDO : Redo the assignment
+SCORE : Score: 
+TIME : Time left: 
+MINS : m
+
+HCorrect : Correct!
+HWrong : Wrong! Correct answers include:
+
+══════════════════════════════════════════════════════════
+
+The text for editing the test options.
+
+MTO : Test options
+
+TO1 : Select question order
+
+O1 : Once through in order
+O2 : Once through in random order
+O3 : In random order until you get them all right
+O4 : In random order, without stopping
+ 
+TOX1 : Written or spoken questions (Language 1)?
+WSW1 : Written questions
+WSS1 : Spoken questions
+
+TOX2 : Written or spoken questions (Language 2)?
+WSW2 : Written questions
+WSS2 : Spoken questions
+
+
+
+TO2 : Written answers or multiple-choice?
+ 
+WFW : Written answers
+WFF : Multiple-choice
+ 
+TO3 : Restrict multiple-choice by topic
+TO3Y : Yes
+TO3N : No
+
+TO4 : Select balance of questions
+
+N0100 : (Number from 0 to 100)
+
+══════════════════════════════════════════════════════════
+
+The text for editing the appearance options
+
+POFont : Font
+TIFont : Title font
+POSize3 : Base font size
+POAL : Application language
+
+══════════════════════════════════════════════════════════
+
+The text for the Settings screen
+
+SETT : Settings
+
+══════════════════════════════════════════════════════════
+
+Entries for the lockdown screen.
+
+Lo1 : Disable file menu
+Lo2 : Restrict file menu
+Lo3 : Lock publication
+Lo4 : Lock test options
+Lo5 : Lock appearance options
+Lo6 : Lock update options
+Lo7 : Lock lockdown options
+Lo8 : Lock view menu
+Lo9 : Lock user menu
+Lo10 : Lock classroom and user menus
+
+══════════════════════════════════════════════════════════
+
+NoDesc : No description has been supplied for this .vcb file.
+NoHelp : No keyboard help has been supplied for this .vcb file.
+NoKeys : No keyboard settings have been supplied for this language.
+
+══════════════════════════════════════════════════════════
+
+FLIC : Copyright and licenses
+SLIC : Show all licenses
+CLIC : Close
+
+══════════════════════════════════════════════════════════
+
+Messages various
+
+CF1 : Oopsie! Peach is looking for a file
+CF2 : that isn't there.
+
+AREYOUSURE : Are you sure?
+UNSAVED : You have unsaved changes, are you sure you want to do this?
+UNSAVEDG : You have unsaved changes to this grammar plugin, are you sure you want to do this?
+NORESIT : This assignment has NO resits: if you quit now your current score will be submitted and you will have no opportunity to improve it.
+QUITA : Quit assignment
+CONTA : Continue assignment
+SAVE : Save
+DONTSAVE : Don't save
+
+
+NO FIND : Cannot find text.
+RESEARCH : Restart search from top?
+REYES : Yes
+RENO : No
+
+OK : OK
+
+CANTEDIT : You can't edit the title of your file here: instead it is changed automatically when you use Save As in the File menu.
+
+NOPIC : (Picture not found)
+RorC : Retry or cancel?
+NOLOG : Peach is having difficulty logging you into the web service.
+RETRY : Retry
+CANCEL : Cancel
+
+
+══════════════════════════════════════════════════════════
+
+Now the text for editing properties
+
+The names of the properties:
+
+P1 : Language names and settings
+P2 : About the vocab list
+P3 : Help for keyboard settings
+P4 : Keyboard settings for language 1
+P5 : Keyboard settings for language 2
+P6 : Question formats / grammar plugins
+P7 : Test options overrides
+P8 : Appearance options overrides
+P9 : Lockdown overrides
+
+══════════════════════════════════════════════════════════
+
+Explanation of the settings.
+
+SE1 : These are the settings. They are part of the .vcb file, a sort of preface, invisible to the end-user, which tells Peach how to interact with the file. You can edit anything in blue, or any blank space where it looks like something in blue should go, i.e. after an emdash (—). Consult the manual for further instructions as to use and purpose.
+
+══════════════════════════════════════════════════════════
+
+Captions for the pop-up menus
+
+CUT : Cut
+COPY : Copy
+PASTE : Paste
+DELETE : Delete
+ADD : Add
+ADDT : Add topic
+EDITTN : Edit topic name
+EDIT : Edit
+
+══════════════════════════════════════════════════════════
+
+Captions for the grammar pop-up menus
+
+INDENT : Indent
+UNINDENT : Unindent
+FIND : Find
+REPLACE : Replace
+MATCH CASE : Match case
+
+══════════════════════════════════════════════════════════
+
+Now the immutable names of the settings when you edit the properties. You've already done most of these elsewhere, they're the same as for the settings they lock down.
+
+Lang1 : Language 1
+Lang2 : Language 2
+
+(Those two have to come one after the other, don't change)
+
+RARROW : >
+
+Dir1 : Direction
+Aud1 : Audio
+Pro1 : Pronunciation dictionary
+
+Dir2 : Direction
+Aud2 : Audio
+Pro2 : Pronunciation dictionary
+
+DF : [DEFAULT]
+
+STDQ : How do you say “<W>” in <L>?
+
+BCOLOR : Background colour
+
+══════════════════════════════════════════════════════════
+
+ERR : Error
+GRM : Grammar
+KB : Keyboard
+CALL : Call
+GDF : Get data from
+DATA : Data
+RESULT : Result
+REPORT : Report
+TP : (Topic)
+VC : (Vocabulary)
+
+══════════════════════════════════════════════════════════
+
+Text for publication
+
+PubNI : New icon
+PubPN : Name of your package (required):
+PubP : Publisher (optional):
+PubVN : Version (optional):
+PubF : Include fonts (optional):
+INCH : Publication failed. Your package name is invalid: it should start with an alphabetic character follower by alphanumeric characters, spaces, and the underscore character; it must not end with a space.
+BADPATH : Publication failed. The .vcb file in state memory must be in the Vocab lists subfolder for publication.
+PubFail : Publication failed. This is not your fault but results from known temperamental behaviour on the part of the otherwise excellent underlying third-party software, Inno Setup. Known fixes include: trying again; making sure that your anti-malware software isn't interfering with anything; restarting the computer; using a different computer; and prayer and penitence for your sins.
+
+══════════════════════════════════════════════════════════
+
+FOAH : Assign homework
+
+ASSN : Assign
+
+══════════════════════════════════════════════════════════
+
+Registering
+
+Reg : Registration
+RegIntro : We'll need some information to register you. Please fill in all the blanks and then press the OK button at the bottom of the form.
+RNPIntro : We'll need you to enter your username and the email address you gave when you registered. Fill in the blanks and press the button saying OK at the bottom of the form.
+RegFN : First name
+RegLN : Last name
+RegUN : User name
+RegPW : Password
+RegEM : Email address
+INV1 : Fields should not be left blank.
+INV2 : Fields should not begin or end with a space.
+INV3 : Fields should not contain a colon.
+
+══════════════════════════════════════════════════════════
+
+SSI : Sign in
+SIP : Password
+BUOP : Bad username or password.
+RNP : Request new password
+PSENT : A new password has been sent to you.
+PUPD : Your password has been updated.
+RegCP : Current password
+RegNP : New password
+NewEM : New email address
+CPIntro : To change your password, you'll need to enter your current password and the new password you want to change it to. If you've forgotten your current password you should close this form and click on the "I've forgotten my password" option in the Classroom menu.
+CEMIntro : To change your email address, enter your password and the new email address.
+EUPD : Your email address has been updated.
+
+══════════════════════════════════════════════════════════
+
+Classes : Classes
+CIntro1a : The table below shows the classes you belong to. It is currently empty, either because you haven't applied to join any classes, or because you haven't yet been accepted into the classes you've applied for. To apply to join classes, follow the instructions further down this form.
+CIntro1b : The table below shows the classes you belong to. If you want to leave a class, select it in the table and then click the "Leave class" button. To apply to join a new class, follow the instructions further down this form.
+CIntro2 : To apply to join a class, fill in the username of the teacher and the name of the class, then click the button saying "Apply to join class".
+CIntro3 : When you have finished managing your classes, click the button below to return to the main screen.
+LabTN : Teacher's username
+LabCN : Name of class
+ButLC : Leave class
+ButAJC : Apply to join class
+ButRMS : Return to main screen
+ApO : You have successfully joined the class.
+ApC : Sorry, this class is closed for new registrations.
+
+══════════════════════════════════════════════════════════
+
+SIntro1a : The tables below show the classes you teach and the students enrolled in them. They are currently empty. To add a class, click the button labelled "Add class".
+SIntro1b : The tables below show the classes you teach and the students enrolled in them. Click on the name of a class to see a list of the students in it. To delete a class, click the "Delete class" button after selecting it. To add a class, click the button labelled "Add class".
+SIntro1c : The tables below show the classes you teach and the students enrolled in them. To delete a class, click the "Delete class" button after selecting it. To add a class, click the button labelled "Add class". To delete a student, select their name from the "Students" list and click the "Delete student" button.
+Students : Students
+ButAC : Add class
+ButDC : Delete class
+ButDS : Delete student
+NOBC : The class name can't be left blank.
+AppCap : Admissions
+Ad1 : Accept students automatically
+Ad2 : Notify me for approval
+As3 : Close admissions
+
+══════════════════════════════════════════════════════════
+
+NSent : You have applied to join the class. A message will be sent to your notifications when the teacher has reviewed your application, and if you are accepted, the class will appear on your list of classes.
+NApp1 : has applied to join your class 
+NApp2 : . Do you accept?
+ButAccept : Accept
+ButDecline : Decline
+NRem : The teacher has deregistered you from the class
+NAcc : The teacher has approved your application to join the class
+NDec : The teacher has declined your application to join the class
+NLeft : has left your class
+
+══════════════════════════════════════════════════════════
+
+Assignments : Assignments
+AHead : Create assignments
+LHead : Test settings
+ACLASS : Class
+ANAME : Assignment name
+ADATE : Date
+ATIME : Time
+ASCORE : Score
+Adate : (date)
+Aclass : (class)
+Atime : (time)
+ADUE : Due
+ButA : Assign
+LabOC : Test conditions 
+CO1 : Open-book
+CO2 : Half-closed
+CO2 : Exam
+ChAR : Allow retakes
+NofQ : Number of questions
+TxNA : N/A
+TWHBA : The work has been assigned.
+DELASS : Delete assignment
+NOASS : You have no assignments at the moment.
+NOCLASS : The class field must be filled in.
+NODATE : You must select a date.
+NOTIME : You must select a time.
+DOA : Do selected assignment
+NODOA : Leave it 'til later
+AIntro : These are your assignments in order of due date. Use the checkboxes on the left to select which assignment you want to do, and then click the button saying "Do selected assignment". If you want to do something else instead, click the button saying "Leave it 'til later". If an assignment has an entry in the "Score" column, that means that you've already done it but can still redo it if you want to.
+
+══════════════════════════════════════════════════════════
+
+PB : . Powered by
+CR1 : Peach runs on FPC/Lazarus, Python, Balabolka, eSpeak NG, Inno Setup 6, PHP, and MariaDB. Thanks for the free stuff, kind people!
+CR2 : Especial thanks to Dmitry Boyarintsev for RichMemo.
+CR3 : Icon design by Ilma Salman.
+
+══════════════════════════════════════════════════════════
+
+And that's it! You're awesome! Have a nice cup of tea and a biscuit!

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Release"/>
+    <Units Count="35">
+      <Unit0>
+        <Filename Value="Peach.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8"/>
+        <CursorPos Y="37"/>
+        <UsageCount Value="202"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Main"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="568"/>
+        <CursorPos X="5" Y="578"/>
+        <UsageCount Value="202"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="searchandreplace.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormFind"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SearchAndReplace"/>
+        <TopLine Value="19"/>
+        <CursorPos Y="54"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="appearanceoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAO"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AppearanceOptions"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="50"/>
+        <CursorPos X="46" Y="58"/>
+        <UsageCount Value="220"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="lockdownoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormLO"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LockdownOptions"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="46" Y="11"/>
+        <UsageCount Value="217"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="publish.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormPublish"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Publish"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="38"/>
+        <CursorPos X="43" Y="47"/>
+        <UsageCount Value="218"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="qaunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormQA"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="QAUnit"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="188"/>
+        <CursorPos X="22" Y="202"/>
+        <UsageCount Value="392"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="signin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormSignIn"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SignIn"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="24"/>
+        <CursorPos X="10" Y="49"/>
+        <UsageCount Value="294"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="assignhomework.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAssignHomework"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AssignHomework"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="29" Y="54"/>
+        <UsageCount Value="284"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="register.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRegister"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Register"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="40" Y="15"/>
+        <UsageCount Value="202"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="studentclasses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormSClasses"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="StudentClasses"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="33"/>
+        <CursorPos X="92" Y="82"/>
+        <UsageCount Value="210"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="teacherclasses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormStudents"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TeacherClasses"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="139"/>
+        <CursorPos Y="157"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="testresults.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormResults"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TestResults"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="103"/>
+        <CursorPos X="50" Y="124"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="interposeredit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="InterposerEdit"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <CursorPos Y="94"/>
+        <UsageCount Value="201"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="iconupdater.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="IconUpdater"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="47" Y="12"/>
+        <UsageCount Value="201"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="versionsupport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="VersionSupport"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="104"/>
+        <CursorPos X="4" Y="83"/>
+        <UsageCount Value="209"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="assignments.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAssignments"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Assignments"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="30" Y="9"/>
+        <UsageCount Value="310"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="fontinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FontInfo"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="45" Y="11"/>
+        <UsageCount Value="258"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="licenses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormLicenses"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Licenses"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="23"/>
+        <CursorPos X="47" Y="54"/>
+        <UsageCount Value="200"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="pythonfunctions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PythonFunctions"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3"/>
+        <CursorPos X="76" Y="19"/>
+        <UsageCount Value="302"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Packages\WordMemo\wmemo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="WMemo"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6"/>
+        <CursorPos X="28" Y="29"/>
+        <UsageCount Value="79"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="Packages\PythonPackage\pymemo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PyMemo"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="64" Y="9"/>
+        <UsageCount Value="77"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="Packages\Peach\applanguage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AppLanguage"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="77"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="Packages\Peach\internet.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Internet"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="77"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="Packages\Peach\rminlinepicture.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RMInlinePicture"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="77"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="Packages\Peach\commonstringfunctions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CommonStringFunctions"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="77"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="Packages\Peach\vocab.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Vocab"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="385"/>
+        <CursorPos X="17" Y="410"/>
+        <UsageCount Value="77"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="vocab.pas"/>
+        <UnitName Value="Vocab"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="115"/>
+        <CursorPos X="77" Y="52"/>
+        <UsageCount Value="383"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="internet.pas"/>
+        <UnitName Value="Internet"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1042"/>
+        <CursorPos X="36" Y="1054"/>
+        <UsageCount Value="193"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="rminlinepicture.pas"/>
+        <UnitName Value="RMInlinePicture"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="56" Y="8"/>
+        <UsageCount Value="202"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="applanguage.pas"/>
+        <UnitName Value="AppLanguage"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="41"/>
+        <CursorPos X="11" Y="10"/>
+        <UsageCount Value="195"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="commonstringfunctions.pas"/>
+        <UnitName Value="CommonStringFunctions"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="94"/>
+        <CursorPos X="55" Y="107"/>
+        <UsageCount Value="195"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="pymemo.pas"/>
+        <UnitName Value="PyMemo"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="343"/>
+        <CursorPos X="45" Y="355"/>
+        <UsageCount Value="61"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="wmemo.pas"/>
+        <UnitName Value="WMemo"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="37"/>
+        <CursorPos X="3" Y="173"/>
+        <UsageCount Value="60"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="..\..\..\Downloads\main (2).pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="602"/>
+        <CursorPos X="106" Y="614"/>
+        <UsageCount Value="6"/>
+      </Unit34>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode="default"/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

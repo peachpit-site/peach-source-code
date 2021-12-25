@@ -1,0 +1,203 @@
+object FormRegister: TFormRegister
+  Left = 61
+  Height = 434
+  Top = 55
+  Width = 298
+  BorderStyle = bsDialog
+  Caption = 'FormRegister'
+  ClientHeight = 434
+  ClientWidth = 298
+  OnActivate = FormActivate
+  LCLVersion = '2.2.0.1'
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 12
+    Width = 274
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 12
+    Caption = 'Label1'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    WordWrap = True
+  end
+  object Label6: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = EditPW
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 267
+    Width = 34
+    BorderSpacing.Top = 12
+    Caption = 'Label6'
+  end
+  object Label4: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = EditLN
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 159
+    Width = 34
+    BorderSpacing.Top = 12
+    Caption = 'Label4'
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = EditFN
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 105
+    Width = 34
+    BorderSpacing.Top = 12
+    Caption = 'Label3'
+  end
+  object EditFN: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 70
+    Width = 274
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    BorderSpacing.Right = 12
+    TabOrder = 0
+    Text = 'EditFN'
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 51
+    Width = 34
+    BorderSpacing.Top = 24
+    Caption = 'Label2'
+  end
+  object Divider: TShape
+    Left = 148
+    Height = 39
+    Top = 310
+    Width = 0
+  end
+  object EditLN: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label3
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Label1
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 124
+    Width = 274
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    TabOrder = 1
+    Text = 'EditLN'
+  end
+  object EditUN: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label4
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Label1
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 178
+    Width = 274
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    TabOrder = 2
+    Text = 'EditUN'
+  end
+  object EditEM: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label6
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Label1
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 286
+    Width = 274
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    TabOrder = 4
+    Text = 'EditEM'
+  end
+  object ButtonOK: TButton
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = EditEM
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Divider
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 25
+    Top = 333
+    Width = 130
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 24
+    BorderSpacing.Right = 6
+    Caption = 'ButtonOK'
+    OnClick = ButtonOKClick
+    TabOrder = 5
+  end
+  object ButtonCancel: TButton
+    AnchorSideLeft.Control = Divider
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = ButtonOK
+    AnchorSideRight.Control = Label1
+    AnchorSideRight.Side = asrBottom
+    Left = 154
+    Height = 25
+    Top = 333
+    Width = 132
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    Caption = 'ButtonCancel'
+    OnClick = ButtonCancelClick
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Label5: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = EditUN
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 213
+    Width = 34
+    BorderSpacing.Top = 12
+    Caption = 'Label5'
+  end
+  object EditPW: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label5
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Label1
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 232
+    Width = 274
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 3
+    Text = 'EditPW'
+  end
+end

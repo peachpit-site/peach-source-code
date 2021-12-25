@@ -1,0 +1,53 @@
+object FormFind: TFormFind
+  Left = 81
+  Height = 164
+  Top = 81
+  Width = 324
+  BorderStyle = bsDialog
+  Caption = 'FormFind'
+  ClientHeight = 164
+  ClientWidth = 324
+  LCLVersion = '2.2.0.1'
+  object EditFind: TEdit
+    Left = 12
+    Height = 23
+    Top = 12
+    Width = 300
+    OnKeyUp = EditFindKeyUp
+    TabOrder = 0
+  end
+  object EditReplace: TEdit
+    AnchorSideTop.Control = EditFind
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 47
+    Width = 300
+    BorderSpacing.Top = 12
+    OnKeyUp = EditReplaceKeyUp
+    TabOrder = 1
+  end
+  object CheckCase: TCheckBox
+    AnchorSideTop.Control = EditReplace
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 19
+    Top = 82
+    Width = 78
+    BorderSpacing.Top = 12
+    Caption = 'CheckCase'
+    TabOrder = 2
+  end
+  object FindButton: TButton
+    AnchorSideTop.Control = EditReplace
+    AnchorSideTop.Side = asrBottom
+    Left = 176
+    Height = 27
+    Top = 82
+    Width = 136
+    BorderSpacing.Top = 12
+    Caption = 'FindButton'
+    OnClick = FindButtonClick
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,186 @@
+§#[SETT]
+¶
+¶#[SE1]
+¶
+§#[P1]
+¶
+#[Lang1] — Arabic
+#[Dir1] — <
+#[Aud1] — 0x0C01 
+¶
+#[Lang2] — English
+#[Dir2] — >
+#[Aud2] — 0x0809 
+¶
+§#[P2]
+¶
+¶This vocab list is for the purposes of demonstration only and should probably not be used to learn Arabic.
+¶
+§#[P3]
+¶
+¶When typing in Arabic, everything you would expect to happen (if you knew any Arabic) does in fact happen: b gets you ب, j gets you ج, and so forth.
+¶
+¶Besides this, you can use the Alt key in combination with d, h, s, t, and z to produce the respective emphatic consonants. Meanwhile Ctrl + a consonant produces those consonants which we usually transliterate as a consonant plus an h, i.e. Ctrl + d, g, k, s, or t will produce the letters we transliterate as dh, gh, kh, sh, or th. Ctrl + h will get you the feminine ending  ة.
+¶
+¶ى is obtained by Ctrl + a, " will produce  ٔ , ' will produce ء, and / will give you a  ٕ
+¶
+¶When typing in English, the Alt key plus d, h, s, t, or z will produce the appropriate emphatic consonant, and with a, i, or u will produce the appropriate long vowel
+¶
+¶These keyboard settings were produced for demonstration purposes by someone who hasn't touched Arabic in twenty years and may not meet the needs of people actually wanting to study Arabic.
+¶
+§#[P4]
+¶
+ᵃ1 — ا
+b — ب
+ᵃt — ط
+ᶜt — ث
+t — ت
+j — ج
+ᶜh — ة
+ᵃh — ح
+h — ه
+ᶜk — خ
+ᵃd — ض
+ᶜd — ذ
+d — د
+r — ر
+ᵃz — ظ
+z — ز
+ᶜs — ش
+ᵃs — ص
+s — س
+` — ع
+ᶜg — غ
+f — ف
+q — ق
+k — ك
+l — ل
+m — م
+n — ن
+w — و
+y — ي
+" —   ٔ
+/ —   ٕ
+' — ء
+ᶜa — ى
+1 —  ٖ
+! —  ٰ
+اا — آ
+a —  َ
+i —  ِ
+u —  ُ
+& —  ّ
+. —  ْ
+c — 
+e — 
+g — 
+o — 
+p — 
+v — 
+x — 
+¶
+§#[P5]
+¶
+ᵃd — ḍ
+ᵃh — ḥ
+ᵃs — ṣ
+ᵃt — ṭ
+ᵃz — ẓ
+ᵃa — ā
+ᵃi — ī
+ᵃu — ū
+¶
+§#[P6]
+¶
+#[DF] — What's the <L> for <W>? : What's the <L> for <W>?
+¶
+§#[P7]
+¶
+¶#[TO1] 
+¶
+○ #[O1] — 
+○ #[O2] — 
+○ #[O3] — 
+○ #[O4] — 
+¶
+¶#[TOX1]
+¶
+○ #[WSW1] — 
+○ #[WSS1] — 
+¶
+¶#[TOX2]
+¶
+○ #[WSW2] — 
+○ #[WSS2] — 
+¶
+¶#[TO2]
+¶
+○ #[WFW] — 
+○ #[WFF] — 
+¶
+¶#[TO3]
+¶
+● #[TO3Y] — 
+○ #[TO3N] — 
+¶
+¶#[TO4]
+¶
+#[N0100] — 
+¶
+§#[P8]
+¶
+#[POFont] — 
+#[TIFont] — 
+#[POSize3] — 
+#[BCOLOR] — C1FFC1
+¶
+§#[P9]
+¶
+□ #[Lo2] — 
+□ #[Lo3] — 
+□ #[Lo4] — 
+□ #[Lo5] — 
+□ #[Lo6] — 
+□ #[Lo7] — 
+□ #[Lo8] — 
+¶
+§Arabic demo
+¶
+§Introduction
+¶
+¶This is really just a demonstration of how well Peach handles Arabic script, or rather how well Unicode handles it: I can take very little credit.
+¶
+§Keyboard settings
+¶
+¶When typing in Arabic, everything you would expect to happen (if you knew any Arabic) does in fact happen: b gets you ب, j gets you ج, and so forth. But then we have to find a way to access all those Arabic consonants that have no parallel in our alphabet.
+¶
+¶You can use the Alt key in combination with d, h, s, t, and z to produce the respective emphatic consonants. Meanwhile Ctrl + a consonant produces those consonants which we usually transliterate as a consonant plus an h, i.e. Ctrl + d, g, k, s, or t will produce the letters we transliterate as dh, gh, kh, sh, or th. Ctrl + h will get you the feminine ending  ة.
+¶
+¶ى is obtained by Ctrl + a, " will produce  ٔ , ' will produce ء, and / will give you a  ٕ
+¶
+¶When typing in English, the Alt key plus d, h, s, t, or z will produce the appropriate emphatic consonant, and with a, i, or u will produce the appropriate long vowel
+¶
+¶These keyboard settings were produced for demonstration purposes by someone who hasn't touched Arabic in twenty years and may not meet the needs of people actually wanting to study Arabic.
+¶
+§Making it talk
+¶
+¶(1) Open “Narrator Settings” by pressing the Windows logo key + Ctrl + n.
+¶(2) Under “Personalise Narrator’s voice”, select “Add more voices”. This will take you to the “Speech settings” page.
+¶(3) Under “Manage voices”, select “Add voices”.
+¶(4) Select “Arabic (Egypt)” and select “Add”.
+¶(5) Restart Peach.
+¶
+§Numbers
+¶
+وا حد — one
+إثنان — two
+ثلاثة — three
+أربعة — four
+خمسة — five
+¶
+§Body parts
+¶
+يد — arm, hand
+رجل — leg
+قدم — foot
+صدر — breast, chest

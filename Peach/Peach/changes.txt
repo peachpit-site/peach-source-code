@@ -1,0 +1,3 @@
+Fixed some minor quirks and did some major refactoring the results of which will hopefully be almost completely invisible to you. But the codebase is better and stronger for it.
+
+Happy Christmas!

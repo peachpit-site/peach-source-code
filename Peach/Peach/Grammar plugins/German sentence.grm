@@ -1,0 +1,229 @@
+def right_replace(s, a, b):
+	t = s.rpartition(a)
+	return t[0]+b+t[2]
+
+def German_pronoun(person, number, gender):
+	if person == '3':
+		person = person + gender	
+	return from_table(person, number, [
+			
+						[	'sg.',		'pl.'		],
+			
+			[	'1',		'ich',		'wir'		],
+			[	'2',		'du',		'ihr'		],
+			[	'3m.',	'er',		'sie'		],
+			[	'3f.',		'sie',		'sie'		],
+			[	'3n.',	'es',		'sie'		],
+			
+	])		
+
+def German_article(case, gender, number):
+	if number == 'pl.':
+		column = number
+	else:
+		column = gender
+		
+	return from_table (case, column, [
+	
+							[	'm.',		'f.',		'n.',		'pl.'		],
+			
+			[	'nom.',		'der',	'die',	'das',	'die'		],
+			[	'acc.',		'den',	'die',	'das',	'die' 	],
+			[	'gen.',		'des',	'der',	'des',	'der'	],
+			[	'dat.',		'dem',	'der',	'dem',	'den'	],
+	
+	])
+
+def get_gender(n):        #Users can specify the gender just by putting the article in the vocab list.
+	article = n[:3]
+	if article == 'der':
+		return 'm.'
+	if article == 'die':
+		return 'f.'
+	return 'n.'
+	
+def German_noun(noun, number):
+	trimmed_noun = noun[4:]
+	if number == 'sg.' or ends_with(noun, 'en', 'chen', 'lein'):
+		return trimmed_noun
+	if has (noun, 'pl.'):
+		return what_is(noun, 'pl.')
+	if ends_with(noun, 'nis', 'ling', 'ig', 'ich'):
+		return trimmed_noun + 'e'
+	g = get_gender(noun)
+	if g == 'f.':
+		if not ends_with(noun, 'e'):
+			trimmed_noun = trimmed_noun + 'e'
+		return trimmed_noun + 'n'
+	if ends_with(noun, 'er', 'el'):
+		return(trimmed_noun)
+	return(trimmed_noun+'e');
+		
+def awkward(word):
+	return ends_with(word, ['d', 't'] + sequence(['b','d','f','g','p','t','ch'], ['m', 'n']))
+		
+
+def conjugate_German_verb(verb, person, number, tense):
+
+	#Get the stem.
+	no_e = verb[-2] != 'e'
+	if no_e:
+			stem = verb[:-1]
+	else:
+			 stem = verb[:-2]
+	if tense == 'pres.':
+		
+		# Either it's so irregular the form has been explicitly specified ...
+		if has(verb, person + number):
+			return what_is(verb, person + number) 
+
+		# Or we can pick a suffix from the table.
+		suffix = from_table(person, number, [
+		
+					 			[	'sg.', 	'pl.'	],
+					 
+					 [	'1',		'e',		'en'	],
+					 [	'2',		'st',		't'		],
+					 [	'3',		't',		'en'	],
+		])
+		
+		if no_e and number == 'pl.' and person != '2':
+				suffix = 'n'
+		
+		#Deal with stem changes in the 2nd and 3rd person singular.
+		
+		stem_change = False;
+		if number == 'sg.' and person != '1':
+			stem_change = True
+			if 	'a → ä' in brackets[verb]:
+				stem = right_replace(stem, 'a', 'ä')
+			elif 'au → äu' in brackets[verb]:
+				stem = right_replace(stem, 'au', 'äu')
+			elif 'e → i' in brackets[verb]:
+				stem = right_replace(stem, 'e', 'i')
+			elif 'e → ie' in brackets[verb]:
+				stem = right_replace(stem, 'e', 'ie')
+			else:
+				stem_change = False
+		
+		#Harmonize the suffix with the end of the stem as necessary.
+		if  awkward(stem) and ((number == 'pl.' and  person == '2')  or (number == 'sg.' and person !='1' and not stem_change)):
+			suffix = 'e'+suffix
+		if number == 'sg.' and person == '2' and stem[-1] in ['s', 'ß', 'x', 'z']:
+			suffix = 't'	
+			
+	else:  #Else we're returning the preterite
+		if has(verb, 'pret.'):
+			stem = what_is(verb, 'pret.')
+			if number == 'pl.' and person != '2':
+				stem = stem + 'e'
+		else:
+			if awkward(stem):
+				stem = stem + 'e'
+			stem = stem + 'te'
+			
+		suffix = from_table(person, number, [
+		
+					 			[	'sg.', 	'pl.'	],
+					 
+					 [	'1',		'',			'n'	],
+					 [	'2',		'st',		't'		],
+					 [	'3',		'',			'n'	],
+		])
+				
+	return stem + suffix
+				
+			
+def English_pronoun(person, number, gender, flag):
+	if person=='3':
+		person = person + gender
+	
+	pronoun = from_table(person, number,[
+	
+								[	'sg.',					'pl.'				],
+	
+					['1',			'I',					'we'				],
+					['2',			'you {sg.}',		'you {pl.}'	],
+					['3m.',		'he',					'they'			],
+					['3f.',		'she',				'they'			],
+					['3n.',		'it',					'they'			],
+					
+	])
+		
+	if flag == 'true' and person[0] == '3' and number == 'pl.':
+			pronoun = 'they/you_{formal}'
+			
+	return pronoun
+
+def English_noun(w,num):
+    if num == 'pl.':
+         if has(w,'pl.'):
+              w = what_is(w,'pl.')
+         else:
+              if ends_with(w,'y') and not ends_with(w, sequence(['a','e','i','o','u'], 'y')):
+                   w = w[:-1] + 'ies'
+              elif ends_with(w, 's','x','z','sh','ch'):
+                  w = w + 'es'
+              else:
+                  w = w + 's'
+    return w
+
+
+def conjugate_English_verb(verb, person, number, tense):
+	trimmed_verb = verb
+	if verb[:3] == 'to ':
+		trimmed_verb = verb[3:]
+	space = trimmed_verb.find(' ') 
+	if space == -1:
+        head = trimmed_verb
+        tail = ''
+	else:
+        head = trimmed_verb[:space]
+        tail = trimmed_verb[space:]
+        
+	if tense == 'pres.':
+		if person == '3' and number == 'sg.':
+			if ends_with(head,'y') and not ends_with(head, sequence(['a','e','i','o','u'], 'y')):
+	                   head = head[:-1] + 'ies'
+			elif ends_with(head, 's','x','z','sh','ch'):
+	                  head = head + 'es'
+			else:
+	                  head = head + 's'
+	else: #We do the preterite. 
+		    if has(verb,'pret.'):
+		        head = what_is(verb,'pret.')
+		    elif head == 'be':
+		        if number == 'sg.' and person == '3rd':
+		            head = 'was'
+		        else:
+		            head = 'were'
+		    else:
+		        if ends_with(head,'y') and not ends_with(head, sequence(['a','e','i','o','u'], 'y')):
+		            head = head[:-1] + 'i'
+		        if head[-1] == 'e':
+		            head = head + 'd'
+		        else:
+		            head = head + 'ed'
+		            
+	return head + tail
+ 
+			
+verb = fetch('v')
+noun = fetch('n')
+person = random.choice(['1','2','3'])
+number = random.choice(['sg.', 'pl.'])
+pgender = random.choice(['m.','f.','n.'])
+tense = random.choice(['pres.', 'pret.'])
+noun_number = random.choice(['sg.', 'pl.'])
+
+format[German] = standard_format('', True, '.')
+format[English] = standard_format('', True, '.')
+directive = '[T]'
+if random.choice([True, False]):
+	grammar(English,  [English_pronoun, person, number, pgender, 'true'], ' ', [verb, conjugate_English_verb, person, number, tense], ' the ', [noun, English_noun, noun_number])
+	grammar(German,  [German_pronoun, person, number, pgender], ' ', [verb, conjugate_German_verb, person, number, tense], ' ',  [German_article, 'acc.', [noun, get_gender], noun_number], ' ', [noun, German_noun, noun_number])
+else: 
+	agent = fetch('n')
+	agent_number = number = random.choice(['sg.', 'pl.'])
+	grammar(English, 'the ',  [agent, English_noun, agent_number] ,' ', [verb, conjugate_English_verb, person, number, tense], ' the ', [noun, English_noun, noun_number])
+	grammar(German,  [German_article, 'nom.', [agent, get_gender], noun_number], ' ', [agent, German_noun, agent_number]  ,' ', [verb, conjugate_German_verb, person, number, tense], ' ',  [German_article, 'acc.', [noun, get_gender], noun_number], ' ', [noun, German_noun, noun_number])

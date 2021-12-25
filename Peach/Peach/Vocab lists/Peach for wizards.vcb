@@ -1,0 +1,627 @@
+§#[SETT]
+¶
+¶#[SE1]
+¶
+§#[P1]
+¶
+#[Lang1] — French
+#[Dir1] — >
+#[Aud1] — eS#fr
+¶
+#[Lang2] — English
+#[Dir2] — >
+#[Aud2] — eS#en
+¶
+§#[P2]
+¶
+¶This is a manual for Peach.
+¶
+§#[P3]
+¶
+¶You get an é with Alt + e. Ctrl + a vowel gets you a grave accent, e.g. Ctrl + a gets you à. Alt + c will give you ç. Typing a ^ after a vowel puts a circumflex on the vowel, so that o^ gets you an ô, and similarly typing an e or an i followed by " will put a diaraesis over it. And oe will turn into œ automatically: if what you want is oë then follow it with " to get the diaraesis.
+¶
+§#[P4]
+¶
+ᵃe — é
+ᶜa — à
+ᶜe — è
+ᶜu — ù
+e" — ë
+i" — ï
+oe — œ
+œ" — oë
+ᵃc — ç
+ᶜc — ç
+a^ — â
+e^ — ê
+i^ — î
+o^ — ô
+u^ — û
+¶
+§#[P5]
+¶
+¶No keyboard settings have been supplied for this language.
+¶
+§#[P6]
+¶
+#[DF] — What’s the <L> for “<W>”? : What’s the <L> for “<W>”?
+[T] — Translate “<W>” : Translate “<W>”
+¶
+§#[P7]
+¶
+¶#[TO1] 
+¶
+○ #[O1] — 
+○ #[O2] — 
+○ #[O3] — 
+○ #[O4] — 
+¶
+¶#[TOX1]
+¶
+○ #[WSW1] — 
+○ #[WSS1] — 
+¶
+¶#[TOX2]
+¶
+○ #[WSW2] — 
+○ #[WSS2] — 
+¶
+¶#[TO2]
+¶
+○ #[WFW] — 
+○ #[WFF] — 
+¶
+¶#[TO3]
+¶
+● #[TO3Y] — 
+○ #[TO3N] — 
+¶
+¶#[TO4]
+¶
+#[N0100] — 
+¶
+§#[P8]
+¶
+#[POFont] — 
+#[TIFont] — 
+#[POSize3] — 
+#[BCOLOR] — 71B8FF
+¶
+§#[P9]
+¶
+□ #[Lo2] — 
+□ #[Lo3] — 
+□ #[Lo4] — 
+□ #[Lo5] — 
+□ #[Lo6] — 
+□ #[Lo7] — 
+□ #[Lo8] — 
+¶
+§Peach for wizards
+¶
+¶This is a version of Peach for people who might be interested in producing their own resources for it, up to and including their own grammar plugins. If you are less ambitious than that, you probably want to download a different version.
+¶
+§Introduction
+¶
+¶Welcome to Peach! This manual will explain what it’s for and how to use it. We will begin by giving you a student’s-eye view of Peach, and then move on to explaining how to develop your own resources. The User and Classroom menu items will be described separately at the end.
+¶
+¶First of all, what is Peach? Peach is a general-purpose program that will let you study any subject for which data (in the form of .vcb files) is available. This, in fact, is what you’re doing now: you’re looking at a .vcb file called “Peach for wizards”.
+¶
+¶Or rather, if you’ve just started Peach up for the first time, you’re looking at the first two topics in the file. You can open and close topics by clicking on the checkboxes in the box headed “Topics” on the left side of this window. Go ahead and open up “Learn more”.
+¶
+§Learn more
+¶
+¶You did it! Good.
+¶
+¶So far this has just been a sort of e-book, but it has special features for teaching. If you open up the next topic “An example of vocabulary”, you will see some French vocabulary, and also a button will appear at the bottom of the screen allowing you to be tested on it.
+¶
+§An example of vocabulary
+¶
+¶Here are the French words for the numbers from one to ten. There will now be a button at the bottom of this window offering to let you practice on the selected vocabulary, by which Peach means all and any vocabulary in a topic you’ve selected in the “Topics” box. This page you’re reading now will stay open if you start the test, so go ahead, hit the button and see what happens, you won’t lose your place. (You will not, however, be able to change your selection of topics while you’re being tested, so close the test before you try to read the next section.)
+¶
+un — one
+deux — two
+trois — three
+quatre — four
+cinq — five
+six — six
+sept — seven
+huit — eight
+neuf — nine
+dix — ten
+¶
+¶Peach can do more than just drill you on vocabulary, it can also teach grammar and sentence structure: we’ll come to that later but for now let’s go on with the basics. If you’ve closed the testing window, go on to the next topic. But first, here’s a picture, to prove I can.
+¶
+¶img : https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/300px-Tour_Eiffel_Wikimedia_Commons.jpg
+¶
+§The options menu
+¶
+¶This allows you to choose how Peach interacts with you. You access it second from the left on the menu bar, where it says “Options”. Of these far away the most important are the test options.
+¶
+§The test options
+¶
+¶The test options give you a choice of the order in which questions are asked; whether they are presented as multiple-choice flashcards or whether written answers are required; whether the questions go French-to-English or English-to-French, or a mixture of the two; and whether the questions are spoken or written. (In a later section I will explain how to obtain higher-quality voices: for technical reasons the ones that work straight out of the box are usually inferior to the ones you have to download separately.)
+¶
+¶The test options are also available from the window that tests you on vocabulary, if you click on the button marked “Show options”.
+¶
+§The appearance options
+¶
+¶These allow you to pick a font and a font size for the main screen, and also the “application language”, by which I mean the text of the various menus and messages of Peach itself, the things that say “File” and “Options” and so on. This can be different from the languages in the .vcb file. At present the only options are English (UK) and English (US), but the capacity is there.
+¶
+§The update options
+¶
+¶These control whether and when and how Peach autoupdates.
+¶
+§The lockdown options
+¶
+¶These allow you to shut down various of the features of the program for childproofing and customization. Note that if on the popup you choose “Lock lockdown options” and click OK, you will have made your choices permanent, short of reinstalling Peach.
+¶
+§Scripts and accents
+¶
+¶Each language has its own system of writing, occasionally overlapping ours but more often not, and so for you to produce the necessary extra characters Peach must extend the functionality of the keyboard. So the .vcb file, besides the bits you can see (i.e. the bits you’re reading now) also comes along with some keyboard settings to allow you to type Fancy Foreign Letters.
+¶
+¶Note that in this .vcb file these key combinations are only available when Peach gives you a question to be answered in French: if you’re answering in English then by design they will have no effect. (Every .vcb file has two sets of keyboard settings, one for each language.)
+¶
+¶To demonstrate this feature, this particular .vcb file you’re reading implements French accents as follows: You get an é with Alt + e. Ctrl + a vowel gets you a grave accent, e.g. Ctrl + a gets you à. Alt + c will give you ç. Typing a ^ after a vowel puts a circumflex on the vowel, so that o^ gets you an ô, and similarly typing an e or an i followed by a " will put a diaraesis over it. And oe will turn into œ automatically: if what you want is oë then follow it with " to get the diaraesis.
+¶
+¶Here’s some vocabulary if you’d like to try it out. Click the button to start practicing and you will have opportunities to type French letters with accents. (Note that if you still have the “An example of vocabulary” topic open, it will quiz you on those vocabulary items too. This feature of Peach allows you to pick and mix which topics you want to be tested on as you please.)
+¶
+œuf — egg
+tête — head
+garçon — boy, waiter
+forêt — forest
+médecin — doctor; physician
+pièce — room, coin, stage play; play
+canoë — canoe
+hôpital — hospital
+maïs — sweetcorn; maize, corn
+hôtel — hotel
+¶
+¶Of course when you use Peach to study whatever language interests you, it will have its own appropriate keyboard settings. The author of whichever .vcb file you’re studying from should explain the details in the file, as I have here; also, if you go to “Help” in the menu and select “Help with keyboards”, this should bring up a ready reference.
+¶
+¶As a footnote, you will notice that Peach knows about words with multiple meanings, which it displays in the vocab list. You will also find that it knows more synonyms than it displays, for example accepting “physician” for “médecin” and “maize” for “maïs”.
+¶
+§Spoken-word questions
+¶
+¶If you are using a Windows version of Peach, it comes with two methods of producing speech, Balabolka and eSpeak NG. This particular .vcb file uses eSpeak. Balabolka uses SAPI5 voices, which are generally of better quality but which require a little work on your part to get them set up, as explained below, whereas eSpeak works straight out of the box, and also covers some languages for which there is no SAPI5 version. Both are free and were made and given to the world by awesome people, whom I would like to thank.
+¶
+¶To hear the Balabolka/SAPI5 version of French:
+¶
+¶(1) Open “Narrator Settings” by pressing the Windows logo key + Ctrl + n.
+¶(2) Under “Personalise Narrator’s voice”, select “Add more voices”. This will take you to the “Speech settings” page.
+¶(3) Under “Manage voices”, select “Add voices”.
+¶(4) Select “French (France)” and select “Add”. There’s 30 megabytes of it, it’ll take a while.
+¶(5) When it’s finished, in Peach go to “View” in the menu bar, select “Edit settings”, and then where it says “Audio”, replace the mystic rune eS#fr with the still more mystic rune 0x40C. Go to the “File” menu, save the file, and use “View” to go back to the main screen.
+¶(6) If neccessary, restart Peach and/or your computer.
+¶
+¶If the language that you want to learn has a SAPI5 voice available from Microsoft, then you can just repeat this process for that language. There are also many SAPI5 voices produced by others, and these will have their own installation instructions. So long as it’s installed on your computer and you use the right mystic rune in the Settings page of your .vcb file, Balabolka will be able to find and use it.
+¶
+¶But how do you find the right mystic runes for languages other than French?
+¶
+¶• If you want to use Balabolka and a SAPI5 voice, then consult the table at this website (https://ss64.com/locale.html) and use what it says in the column headed “Hexadecimal value”.
+¶• If you want to use eSpeak, consult this webpage (http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry), select the appropriate subtag (e.g. de for German) and then precede it with eS# (so for German, your mystic rune would be eS#de).
+¶
+§The file menu
+¶
+¶It should come as no surprise that you can open and close .vcb files by using the options under “File” in the main menu. I’ve supplied a few example files and you can poke about in them now and come back to this file, or leave them for now and return to them later. As this is Peach for wizards and not for small children, you can also save files and create new ones.
+¶
+¶Besides this file, the example files consist of:
+¶
+¶• “Greek demo.vcb” and “Arabic demo.vcb”: to show how Peach copes with different scripts.
+¶• “Turgan 101.vcb”: the largest of the demos, this is a beginners’ course in an imaginary language. (Why, you ask? Because the conlang community will make perfect beta testers.)
+¶• “Little German demo”: this currently contains only four words and a bunch of grammar.
+¶• “Akkadian demo.vcb”: something I had lying around ’cos I want to learn Akkadian one day.
+¶• “Science demo.vcb”: just there to remind you that rote learning works for other subjects.
+¶
+¶The Greek, Arabic, and German ones are set up to use Balabolka for spoken-word questions, so you can either edit the settings of the .vcb file to use eSpeak instead, as described above, or you can download the appropriate voices for Microsoft Narrator. Use the Egyptian variety of Arabic, not the Saudi Arabian one, and the German version of German, or it won’t work. There is only one kind of Greek, so get that. Akkadian is a dead language so no-one really knows how to pronounce it, though I could name some professors who seem pretty sure.
+¶
+¶(Also while we’re talking about the File menu we might as well note the Publish option. This allows you to publish Peach in the program state you have it in, together with the data in your Vocab and Grammar folders and any fonts you think the end-user needs. You can retitle the program and give it a new icon while you’re doing this: so for example you could make something that is exclusively a French textbook and give it a French flag icon and call it Pêche or French 101. The process takes about 30 seconds, after which File Explorer will open up the Installation folder, where you will find a setup file for your publication.)
+¶
+§[French noun + adjective] Editing vocabulary
+¶
+¶To edit vocabulary, you should go to “View” on the menu bar and select “Edit vocabulary”. Before you do, let’s talk about what you’ll see. It will look very like this screen, except that the “Topics” box will be gone and every topic will be displayed. If you then scroll down to where this text appears on the edit screen, you can go on reading. For reading this and the rest of the manual, you might want to run a second copy of Peach, or to copy this text into Notepad, or something, so that you can read the manual and look at the things it’s describing in parallel rather than skipping back and forth.
+¶
+¶Are you now reading in editing mode? Good. You should find that you can edit this text now. Don’t do so too much, you’ll still need to read it. Here’s some actual vocab entries for you to look at.
+¶
+[n] arbre — tree
+[a] blanc (f. blanche) — white
+[a] comestible — edible
+[n] cathédrale — cathedral
+[n] femme — woman [pl. women]
+[n] fromage — cheese
+[n] garçon — boy, waiter
+[n] jardin — garden
+[a] malodorant — smelly
+[a] mignon (f. mignonne) — cute; sweet, pretty, lovely, adorable
+[n] monocycle — unicycle
+[a] rose — pink
+[n] vache — cow
+[a] vert — green
+¶
+¶To get a topic heading, try to type + at the start of an empty paragraph. To make a vocabulary entry, use Shift + Tab at the start of an empty paragraph. This will supply you with an indentation and an emdash (—). Typing * at the start of a paragraph will supply you with a bullet point.
+¶
+¶Find and replace tools are accessible by right-clicking on the text, bringing up a popup.
+¶
+¶You will also see a Test option on the right-click popup. If you select that it will start a practice test going on the topic you right-clicked on (if it has any vocabulary in it to be tested on) and if you clicked on one of its vocab entries it will test you on that first.
+¶
+¶You may notice that the list of vocabulary, and the topic heading, look different than they do on the main screen. Let’s discuss that in the next section.
+¶
+§Markup
+¶
+¶(Note on terminology: I will follow UK English in calling all these things brackets: ( ) [ ] { }, distinguishing between them where necessary by talking of round, square, or curly brackets.)
+¶
+¶You will have guessed that the [n] and [a] you can see in editing mode in the vocab above stand for noun and adjective respectively, and that these have something to do with the grammar plugins. So does the note [French noun + adjective] which you can see in the topic heading. Let’s leave those aside for now and talk about the other bits.
+¶
+¶First, we can now see hidden English synonyms for the word “cute”. The rule is that every synonym after the first semicolon is hidden. What’s this for? Because if we are teaching French to an English-speaking person, we don’t want to waste their time and mental bandwidth by teaching them English. They know the synonyms for cute. But Peach doesn’t, and so still needs to be told so that it can mark the user correct when they use an appropriate synonym.
+¶
+¶Compare this with the visible synonyms “boy, waiter” given for “garçon”. These should be visible, because an English-speaking person doesn’t know that the same French word means both boy and waiter.
+¶
+¶In the same way, we have round brackets, which are visible to the end-user, and square brackets, which are visible only in editing mode. The end-user needs to be told that French has an irregular feminine of “blanc”, namely “blanche”, but they don’t need to be told that “woman” has an irregular plural “women”. They already know that. But Peach doesn’t, and needs to be told.
+¶
+¶By design, the feature of Peach that converts your typing into Fancy Foreign Letters will not work when you are typing inside brackets, or after an open bracket. You’re not forbidden to put such letters inside brackets, you just can’t type them inside brackets: if you want them the easiest way around this restriction is to type the letters first and the brackets afterwards.
+¶
+¶To insert an image, start a line with img, followed by a space, a colon, a space, and a link to the image.
+¶
+¶NOTE: Peach in its current implementation is quite fussy about whitespace. In particular, it expects a space to occur after (but not before) every comma and semicolon separating a list, to occur before and after a colon, and not to occur either before or after a forward-slash, if one appears (see the next section for a discussion of the / symbol).
+¶
+§Highlighting
+¶
+¶Peach can emphasize or otherwise modify text with <i>italics</i>, <b>bold</b>, <u>underlining</u>, <y>yellow</y>, <g>green</g> or <p>pink</p> highlighting, <S>superscript</S>, <s>subscript</s> and <m>monotype</m>.
+¶
+¶This is achieved using tags: <!><i>italics</i>, <b>bold</b>, <u>underlining</u>, <y>yellow</y>, <g>green</g> or <p>pink</p> highlighting, <S>superscript</S>, <s>subscript</s> and <m>monotype</m></!>. The <!><!></!> tag suppresses tags, so that <!><!><i>italics</i></!></!> displays as <!><i>italics</i></!>.
+¶
+§Advanced markup
+¶
+¶(You may want to skip this bit and come back to it: it is a solution for rare cases.)
+¶
+¶For advanced use, note that although Peach will of course accept answers based on any of the synonyms of a vocab item, when it formulates a question it will always use the first synonym on the list. This is to prevent a phenomenon I call synonym explosion. Consider: because garçon means both boy and waiter, we have supplied Peach with both those definitions, since the user might know them both. We don’t want Peach to ask them what it means, be told waiter, and mark them wrong. But we also don’t want to ask them what the French is for waiter, because they might know the word serveur. But why can’t we just add it to the list of French synonyms? Because then Peach would accept serveur as a valid translation of boy and vice-versa, which is wrong. By always asking questions based on the first synonym, we avoid this.
+¶
+¶To get around this feature when advisable, and for various other uses, we have the / symbol. For example if we have an entry:
+¶
+le/la pamplemousse — the grapefruit
+¶
+¶... then Peach will then accept both “le pamplemouse” and “la pamplemouse” as translations of “the grapefruit”.
+¶
+¶Where variants like this are specified with the / symbol and they come before any comma- or semicolon-separated synonyms (if any, in this example there are none) then unlike with comma-separated synonyms Peach will randomly choose any of the variants to base a question on. I.e in this instance it could ask you to translate le pamplemouse or la pamplemousse, whereas if you had written
+¶
+le pamplemousse, la pamplemousse — the grapefruit
+¶
+¶... then it would base every question on the form with “le”.
+¶
+¶As you can see, Peach understands about spaces and word boundaries: it recognises that the variants indicated by:
+¶
+le/la pamplemousse — the grapefruit
+¶
+¶... should be “le pamplemousse” and “la pamplemousse”, not “le” and “la pamplemousse”.
+¶
+¶In fact, if you show Peach something like this:
+¶
+la grande aubergine — the big/large eggplant/aubergine
+¶
+¶... then it recognizes that the variants are “the big eggplant”, “the big aubergine”, “the large eggplant”, and “the large aubergine”.
+¶
+¶But this can run us into problems. Peach would interpret “be quiet/shut up” as indicating the two alternatives “be quiet up” and “be shut up”. To get the desired result we can write “be_quiet/shut_up”. This is an ugly bit of markup but you’ll hardly ever see it, since it’s mostly a convenience for internal use. It is of course always invisible to the end-user: the / and _ in the following entry are visible only when editing:
+¶
+tais-toi — be_quiet/shut_up
+¶
+§The settings: overview
+¶
+¶This would be a good time to discuss the Settings page. You get to this by choosing “View” on the menu bar and then selecting “Edit settings”. Before you do so, let’s discuss what you’re going to see. (Better still, start a new instance of Peach and look at them there.)
+¶
+¶First off, what even are the settings? They are a sort of preface to the .vcb file which tell it how to interact with Peach. This is why if you go to the File menu and click on “New” you will be offered a choice of two different ways to start a new file, one which keeps the old settings and one which has a bare-bones default set of new settings.
+¶
+¶You will find when you go to the Settings page that you can edit the blue parts, or the blanks where you can see that blue text should go. The settings are divided into nine sections.
+¶
+§The settings: languages
+¶
+¶The first property, “Language names and settings”, contains, for each language:
+¶
+¶• Its name.
+¶• The direction it’s written in, indicated with < or >.
+¶• An “Audio” setting which, when filled in with the right magic rune, allows spoken-word questions in that language.
+¶
+§Settings: help messages
+¶
+¶The next two sections of the settings contain help messages, one that pops up when the user clicks on “About this vocab list” in the Help menu and another that pops up when the user selects “Help with keyboard settings”.
+¶
+¶And then we have the keyboard settings themselves.
+¶
+§Keyboard settings
+¶
+¶If you look at the keyboard settings you should be able to see how they work. There are no keyboard settings for the second language (English) because it doesn’t need any, but you will see a number of entries for language 1 (French). These entries, like the vocabulary items on the vocab page, are live data: they are indented and have two sides separated by an emdash. The meaning of each entry is, “when the user is typing in this language, substitute the thing on the right for the thing on the left”.
+¶
+¶The superscript characters ᵃ, ᵇ, and ᶜ have special meaning: ᵃ means Alt, ᶜ means Ctrl, and ᵇ means both of them together. So an entry for ᵃk, for example, would say what to do if the user pressed Alt+k.
+¶
+¶When you are editing the key settings, you can get the superscript letters by trying to use the corresponding keys, i.e. if you try to type Alt+k you will get ᵃk.
+¶
+¶I have been using French in this manual as an unintimidating and familiar example, since it shares our alphabet with a few diacritics here and there, but there’s no particular difficulty in using a completely different alphabet. If you open up the file “Arabic demo.vcb” you can see how Peach copes with Arabic. As a matter of fact, most of the coping is done by Unicode, which produces the necessary ligatures automatically.
+¶
+¶The file “Greek demo.vcb” is more interesting, and shows how producing  working set of keyboard settings can sometimes require a little thought. An explanation is included in the .vcb file.
+¶
+§Question formats
+¶
+¶Next is the section titled “Question formats”. Each is identified by a “directive”, the thing in square brackets. The way they work should be fairly obvious: when the end-user is being tested and Peach selects a vocab item, that item is wrapped in a question format, with the thing to be translated being substituted for <W> and, optionally, the question format can also contain <L>, for which Peach substitutes the name of the language to be translated into.
+¶
+¶You’ll see that the question formats come in matching pairs, separated by a colon. This is because there is one version for each language, according to whether the thing to be translated is in language 1 or language 2, and in this paticular .vcb file it makes sense that the formats should both be the same for French and English. But see the file “Science demo.vcb” for cases where it is useful that they should be different.
+¶
+¶And how does Peach know which question format to use? If the section has no grammar plugin (as this one, for example, does not) then you can just put the directive at the start of the vocabulary entry, with a space separating the two. If it does have a grammar plugin then the plugin supplies the directive, and Peach uses the appropriate question format based on that. This will make more sense when you know more about grammar plugins, which we’ll begin to discuss a couple of topics down.
+¶
+§The overrides
+¶
+¶Finally in the settings we have three sets of overrides. These are almost self-explanatory. When the .vcb file loads, it can, all by itself, set some of the options that are user-accessible. When the user closes the file, Peach will revert to the user’s own options. This lets the creator of a .vcb file restrict its behavior: if, for example, it must only be used with multiple-choice questions.
+¶
+¶There are also two things in the overrides that aren’t really overrides since the user can’t set them from the options menu: the border color (orange in the case of the .vcb file you’re reading now) and one labeled “Restrict flashcards by topic”. The point of this is that sometimes when we want a student to do multiple-choice questions it’s OK to draw the three wrong answers from any topic they may have selected. But sometimes this would make doing multiple-choice questions too easy: the students might be able to say to themselves “the answer must be le pamplemousse because the other three options are complete sentences”. Having this option turned on prevents this; unlike all the others it is switched on by default.
+¶
+¶That’s all the settings. Now let’s talk about the grammar plugins.
+¶
+§What is a grammar plugin?
+¶
+¶Earlier on, you noticed that the topic heading which reads as “Editing vocabulary” on the main screen looks like “[French noun + adjective] Editing vocabulary” when you look at it in editing mode. What this does is, after Peach has selected an item of vocabulary, it hands that item, and indeed all the items in the topic, over to a grammar plugin called French noun + adjective.grm which knows how to put French nouns and adjectives together. (And, indeed, English ones.) Peach then hands the vocab item to the plugin, which hands it back having had grammar done to it: in this case, having had the appropriate definite article added.
+¶
+¶What a grammar-plugin IS, is a fragment of Python code, which is then pasted into a larger Python program called Sybil, which is called by Peach. Sybil arranges all the data structures and supplies the users with functions and constants and syntactic sugar, so that all the dominoes are set up and the .grm file just has to say which way they should fall. (For example, I have managed to conceal the existence of synonyms: Sybil silently iterates over an arbitrary number of synonyms while the person writing the plugin never uses a single for or while construct.) And the extremely stereotyped form of the plugins makes them very easy to develop rapidly and with a minimum of fuss.
+¶
+§Using the grammar editor
+¶
+¶For your convenience, the Peach/Sybil system has its own editor. This is listed as the “Grammar editor” in the View menu. If you go there you will see that most of the screen is occupied by a box with a headline saying Grammar. This is where the coding happens.
+¶
+¶When you’re using the grammar editor, the File menu pertains to .grm files and not .vcb files. You can open one up and have a look at it.
+¶
+¶In the bottom right hand corner you will see a little box headed Keyboard which allows you to select from the keyboard settings of whichever .vcb file you have open (if you do, in fact, have one open). This affects what happens when you type in the Grammar box: it will give you the appropriate keyboard settings to get fancy characters, BUT only when you’re typing inside quotation marks. (This is a safeguard to prevent all your code from turning into Greek or Arabic or whatever as could otherwise happen.)
+¶
+¶The Grammar box takes care of indentation for you, and the tab key will produce indentation as usual. Block indentation and unindentation are accessible via the right-click dropdown menu, or by Ctrl + the right and left arrows respectively. The right-click menu also gives you access to the find and replace tools.
+¶
+¶At the bottom of the screen is the test bed. You can apply the plugin you’re editing to an entry in a vocab list by putting the entry in the line saying Data and hitting enter or clicking the button.
+¶
+¶Above that line is one labelled “Get data from”, which allows you to conveniently yoink an entry out of the .vcb file you’re editing (if you have one open) and put it in the Data box for testing purposes. The flow of information here is strictly one-way: by design if you then edit the contents of the Data box this will NOT affect the .vcb file.
+¶
+¶You don’t have to get your data from the list: this is just a convenience. You can type what you like in the data box. 
+¶
+¶(Some grammar plugins use the fetch function (about which more later) to construct random phrases from the vocabulary of an entire topic. To use one of those from the IDE, you will have to make a selection of an appropriate topic from the Topics dropdown, otherwise any such plugin will become discouraged and confused.)
+¶
+¶The .grm file you have open will be automatically applied to whatever’s in the Data box (1) as soon as you yoink it from the “Get data from” line or (2) when you’re editing it and you show you’re done by hitting enter or (3) if you click the little button with the arrow in the bottom right of the testbed. You don’t need to save your file for it to run.
+¶
+¶Editing the Data box works just like editing a vocab entry in the vocab editor, i.e. Peach automatically supplies you with the correct keyboard settings for which side of the emdash you’re on. You do not need to use the Keyboard thingy in the bottom right corner for this, that’s just for the grammar editor itself.
+¶
+¶The Result line will contain what the plugin returns, i.e. what it did to the thing you entered in the Data line.
+¶
+¶And the Report line will contain an error report if something went wrong, or any information you want the grammar plugin to pass to it (more about that later).
+¶
+¶If something goes wrong while the plugin is actually in use, i.e. when you’re studying on the main screen and Peach tries to make use of a plugin and an error occurs, then you’ll be taken to the grammar editor and shown where the bug is in the plugin, unless the grammar editor is turned off in the lockdown settings, in which case Peach will try to fail as quietly and inconspicuously as possible, like its author.
+¶
+§Python
+¶
+¶I assume the first people looking at this system can take care of themselves as far as this goes. The user wishing to write grammar plugins will only need a small subset of Python, consisting of:
+¶
+¶• if, elif, and else
+¶• and, or, and not, ==, <, >, and !=
+¶• strings and string handling
+¶• addition and subtraction
+¶• def and return
+¶• random.choice
+¶
+¶That’s about it, except that they also need to know about the variables and functions provided for them by Sybil.
+¶
+§Sybil: data
+¶
+¶First let’s take a quick overview of what Peach sends to Sybil.
+¶
+¶Sybil uses a type called Entry which contains in convenient form the data in one vocab entry, the various synonyms and brackets. The way the system works, if you’re making a .grm file you shouldn’t often have to look inside one of these objects at its field and methods, you can treat it as a black box.
+¶
+¶Sybil provides you with a variable called entry which is based on the entry randomly selected from the vocab list, if the end-user is being tested; or on the value you put in the Data field if you’re using the IDE.
+¶
+¶Of its properties, maybe the only one you might want to look at is entry.brackets. This is just a big heap of everything that occurs in brackets in the whole entry, denuded of its brackets and put indiscriminately into a Python list, together with the directive of the entry, also denuded of its brackets.
+¶
+¶Sybil also supplies you with the entire topic’s-worth of vocabulary, but instead of looking at that directly you will want to use the fetch function, which we’ll look at in the next section.
+¶
+¶You are also provided with a Python dictionary called brackets which links each citation form in the topic to a list of notes that appear in brackets along with that word, i.e. belonging to that item in the entry in which it occurs.
+¶
+¶Anything in square brackets followed by a space at the left hand side of the entry is treated as relating to the whole entry and not to the leftmost item in it. While you can do with this what you want, I have found it the ideal place to note the grammatical function of the entry, [n] for noun, [vi] for intransitive verb, etc.
+¶
+¶HANDY HINT: When Sybil reads in the brackets, it puts comma-and-space-separated notes within the brackets as separate notes in the brackets lists. I.e if the entry has an item
+¶
+¶write [pret. wrote, pp. written]
+¶
+¶that’s the same as if the item was
+¶
+¶write [pret. wrote] [pp. written]
+¶
+¶for your comfort and convenience.
+¶
+¶Besides this, there is a variable called question_language which will be equal to either English or French (in this particular case) or whatever the names of the languages are. (Sybil declares the names of the languages as constants.) This tells you which language the end-user is being asked to translate from.
+¶
+¶There is a variable called question which contains either the string 'written' or 'spoken' according to which the question is; and a corresponding variable called answer which will either be 'written' or 'multiple choice'. These are not passed back to Peach from Sybil, so changing them will not change the behavior of Peach.
+¶
+¶Finally, there is a variable called topic_directive. This is demonstrated to its fullest in the example .vcb file Turgan 101, and is easily explained: if instead of just writing [name_of_grm file] Topic name as our topic heading, we can write [name_of_grm file : directive] Topic name (where the directive is seperated frm the name of the .grm file by a space, a colon, and another space.) Then whatever you put there is passed to Sybil as the contents of topic_directive. This allows you to use the same grammar plugin to do a variety of different things.
+¶
+§Sybil: functions
+¶
+¶Sybil supplies a function called has. To explain its use by example, if we write:
+¶
+¶if has(w, "pl.")
+¶
+¶... then this looks to see if there’s something in the brackets of the string contaned in the variable w that begins with pl. followed by a space. If there is, then it returns True, otherwise False.
+¶
+¶This goes along with the function what_is.
+¶
+¶what_is(w, "pl.") returns the thing that follows the space that follows pl. in the note. Using it will raise an error if there isn’t anything fitting that description, which is why using it should be conditional on the has function.
+¶
+¶HANDY HINT: Remember that has and what_is are looking up the word by its citation form. If you start slicing and dicing a word and then try to look it up, you’ll get yourself a runtime error.
+¶
+¶The function fetch returns an entry from the selected topic, randomly chosen from those entries which have the parameter of fetch in their brackets. It’s easier just to give you an example. If we write:
+¶
+¶verb = fetch("v")
+¶
+¶then that assigns to the variable verb an entry in the chosen topic randomly chosen from those that had [v] or (v) or {v} in their brackets somewhere.
+¶
+¶If there is no such thing then fetch will raise an error.
+¶
+¶Fetch will preferentially use whatever you put in the Data field of the testbed, if applicable. (I.e, in our example, if it has a v in its brackets.)
+¶
+¶Sybil supplies a function there_is("foo") which returns True or False based on whether "foo" (or whatever other string you please) is in the brackets; or there_is("foo",n) returns True if there’s at least n of them. This can therefore be used as a safeguard on fetch. I haven’t used it in my plugins, but you can see how it would be useful.
+¶
+¶The fetch function never returns the same thing twice while constructing the same phrase, so if you want it to construct phrases with two nouns (say) you’ll need at least two different nouns in your topic.
+¶
+¶Sybil supplies a function from_table which allows you to present data about accidence in your grammar functions in a highly readable and reuseable form. This is best demonstrated by example, as it will be in the following sections.
+¶
+¶There are functions starts_with and ends_with, each taking as parameters a string and any number of strings or sets of strings and returning True if the first string starts with / ends with any of the other strings.
+¶
+¶There is a function called sequence which takes as parameter any number of lists of strings and returns a list of all the strings that can be made by concatenating one element from each list in order. For convenience a string as parameter is interpreted as a list containing that string.
+¶
+¶Sybil supplies a variable called directive. This is for passing to Peach the question format it should use when asking the question. If it’s unspecified you get the default question format.
+¶
+¶Sybil supplies a function called note which passes messages to the grammar editor to be displayed in the Report field of the test-bed. This can be used for debugging.
+¶
+¶Any curly brackets in phrases returned by Sybil will be displayed as round brackets by Peach in questions posed to the user. This is for purposes of clarification: we can for example pass them the phrase you {pl.} eat, and they will know that they should answer vous mangez and not tu manges.
+¶
+¶There is an array called format with two elements, one for each language, each one being a function saying how a phrase in that language should be formatted. By default, these functions leave the phrase unchanged. You can set them equal to any function which accepts and returns a string: you could set it to format them into Babylonian cuneiform or l33tspeak.
+¶
+¶What you most likely want to do is produce proper sentences with a capital letter and a period, and variations on this theme. For this we use the standard_format function. This enables us for example to write format[English] = standard_format("", True, ".")
+¶
+¶The first parameter of standard_format specifies the prefix to the sentence, the second whether it is capitalized, and the third the suffix. It needs to be specified for each language because not every language is the same. For example the format of a question in English is given by standard_format("", True, "?"), but for Spanish it would be standard_format("¿", True, "?")
+¶
+§Sybil: the grammar function
+¶
+¶Now we need to talk about the grammar function.
+¶
+¶Let us define a “grammatical function” as one which takes as its first parameter a string which is the citation form of a word (i.e. the form that appears in a dictionary, or in a Peach .vcb file); with the subsequent parameters, if any, being “grammatical variables” such as person, number, gender, case, tense, etc, expressed as strings. A grammatical function should itself return a string. An example would be a function that takes the infinitive of a Spanish verb, plus person and number, and returns the appropriate present-tense form of the verb.
+¶
+¶A rootless grammatical function is the same except that it has no citation form in its parameters. An example would be a function that takes as parameters number, gender, and case, and returns the appropriate German definite article (der die das die etc).
+¶
+¶A “magic list” will be a list consisting of any of the following variations on a theme:
+¶
+¶(1) An Entry, a grammatical function, and as many string-valued things as there are grammatical variables.
+¶
+¶(2) An Entry alone (if we are dealing with an indeclinable word and have no need of a grammatical function).
+¶
+¶(3) A rootless grammatical function and as many string-valued things as there are grammatical variables.
+¶
+¶PLUS, for any of the string-valued things we may substitute a “magic list”, and so on recursively to any depth.
+¶
+¶Then Sybil supplies a function called grammar which takes as its arguments the name of one of the languages, plus any number of things which are either
+¶
+¶(a) String-valued.
+¶
+¶(b) Magic lists.
+¶
+¶It will then package up the phrase so described into one half of the data for Sybil to return to Peach. (The other half being supplied by calling the grammar function with the name of the other language as the first argument.)
+¶
+¶The point of all this being that it is now possible to say how a phrase should be constructed without having to refer to or think about the fact that each Entry consists of two lists of synonyms, some of which may be invisible to the end-user.
+¶
+¶The way to use this should become apparent from the examples given below.
+¶
+§[French definite article] Sybil: example 1
+¶
+¶First, a simple grammar plugin French article.grm which infers the gender of a word and attaches the appropriate definite article. You will find this and the other grammar plugins mentioned here in the Grammar plugins subfolder of the main Peach folder, and can of course open them up using the grammar editor (in the View menu).
+¶
+aéroglisseur — hovercraft
+anguille — eel
+banane — banana
+chapeau — hat
+chaussure — shoe
+cuillère — spoon
+fourmilier — anteater
+lune — moon
+parapluie — umbrella
+tante — aunt
+¶
+§[French verb] Sybil: example 2
+¶
+¶Now let’s conjugate some verbs. This is done by the plugin French verb.grm. Note the use of the from_table function.
+¶
+[v] choisir — choose
+[v] dire (3sg. dit, 1pl. disons, 2pl. dites, 3pl. disent) — say, tell
+[v] fondre — melt
+[v] jouer — play
+[v] manger — eat
+[v] obéir — obey
+[v] vendre — sell
+¶
+§[French noun + adjective] Sybil: example 3
+¶
+¶Now let’s do some noun-adjective agreement to see how it works. This is achieved by the plugin French n + a. You will notice that now we cannot simply refer to the variable entry, since we need to select two words of the right grammatical type, using the fetch function. Then the gender of the adjective is made to agree with that of the noun.
+¶
+¶First some adjectives:
+¶
+[a] blanc (f. blanche) — white
+[a] comestible — edible
+[a] malodorant — smelly
+[a] mignon — cute; sweet, pretty, lovely, adorable
+[a] rose — pink
+[a] vert — green
+¶
+¶And some nouns for them to qualify:
+¶
+[n] arbre — tree
+[n] cathédrale — cathedral
+[n] femme — woman [pl. women]
+[n] fromage — cheese
+[n] garçon — boy, waiter
+[n] jardin — garden
+[n] monocycle — unicycle
+[n] vache — cow
+¶
+§[French] Sybil: example 4
+¶
+¶Now let’s use French_phrase.grm to put all this together into nine different kinds of French phrase, something we can do with a minimum of fuss. Note the use of the format functions in the .grm file.
+¶
+¶The adjectives:
+¶
+[a] blanc (f. blanche) — white
+[a] comestible — edible
+[a] malodorant — smelly
+[a] mignon — cute; sweet, pretty, lovely, adorable
+[a] rose — pink
+[a] vert — green
+¶
+¶The nouns:
+¶
+[n] arbre — tree
+[n] cathédrale — cathedral
+[n] femme — woman [pl. women]
+[n] fromage — cheese
+[n] garçon — boy, waiter
+[n] jardin — garden
+[n] monocycle — unicycle
+[n] vache — cow
+¶
+¶And the verbs:
+¶
+[v] choisir — choose
+[vi] dire (3sg. dit, 1pl. disons, 2pl. dites, 3pl. disent) — say, tell
+[vi] fondre — melt
+[vi] jouer — play
+[v] manger — eat
+[v] obéir — obey
+[v] vendre — sell
+¶
+§The user menu
+¶
+¶This selects how you connect to the internet: basically it affects whether the user can see the Classroom menu and if so what options they can see on it. In most editions of Peach, one option would be chosen and then the menu item would be locked down, to produce a permanent student edition or teacher edition.
+¶
+¶A brief explanation of the options:
+¶
+¶A “Solo user” doesn’t connect to the internet at all, and would not be able to see the classroom menu.
+¶
+¶A “Student” can join classes, as will be explained when we talk about the classroom menu.
+¶
+¶The difference between the “Student” and “Multiple students” options is just that if “Student” is selected then Peach will remember the student’s username and password as part of the program state and if “Multiple students” is selected it won’t, so that it can be used, for example, in a (physical, literal) classroom.
+¶
+¶A “Teacher” can offer classes, as will be explained when we talk about the classroom menu.
+¶
+¶And the setting at the bottom, “Dual user”, gives you the functions both of a student and a teacher. You should keep it that way for now, since this allows you to see all of the options on the classroom menu.
+¶
+§The classroom menu
+¶
+¶The top five options, common to all users whether teacher or student, are so familiar to anyone who’s used the internet as to need no explanation.
+¶
+¶Then there’s “Notifications”. By design, Peach restricts communication: the program will hopefully be used by small children; it should not be possible to use it as a chatroom. Besides the necessary fact that teachers can send .vcb files to students, and students send test scores back to teachers, interactions are limited to a few stereotyped messages: notifications. At present Peach doesn’t alert you to new notifications: you just have to click on “Notifications” and see if you have any.
+¶
+¶Students can use the “Classes” option to apply to join classes, or to leave classes they’ve already joined.  Then “Assignments” will show them due assignments, if any, in the classes they’ve joined. An application to join a class requires the username of the teacher and the name of the class and results in a notification being sent to the teacher so they can accept or deny the application.
+¶
+¶Teachers can use the “Manage classes” option to start classes, close classes, or remove students from classes. “Assign work” lets them do just what it says, and the “Gradebook” shows them the students’ test scores.
+¶
+¶For a demonstration of this feature, if you sign up as a student and then go to Classes in the Classroom menu and apply to join the class with teacher’s username tsmith and class name Akkadian 101, you will have access to some assignments that demonstrate various ways of testing students on the same vocab list: as vocab items or in whole sentences; multiple-choice or written answers; open or closed book; with or without resits, etc.
+¶
+§Feedback
+¶
+¶If you’re looking at this prototype of Peach it’s because I’m actively seeking your feedback. I am using the subreddit r/peach4languages as a clearing-house for discussion, suggestions, complaints, etc. Thank you!

@@ -1,0 +1,209 @@
+object FormSClasses: TFormSClasses
+  Left = 65
+  Height = 538
+  Top = 53
+  Width = 511
+  BorderStyle = bsDialog
+  Caption = 'FormSClasses'
+  ClientHeight = 538
+  ClientWidth = 511
+  OnActivate = FormActivate
+  LCLVersion = '2.2.0.1'
+  object LabelIntro1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 12
+    Width = 487
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 12
+    Caption = 'LabelIntro1'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    WordWrap = True
+  end
+  object ButtonLC: TButton
+    AnchorSideLeft.Control = LabelIntro1
+    AnchorSideTop.Control = ClassGrid
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = ClassGrid
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 25
+    Top = 199
+    Width = 487
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'ButtonLC'
+    OnClick = ButtonLCClick
+    TabOrder = 1
+  end
+  object ClassGrid: TStringGrid
+    AnchorSideLeft.Control = LabelIntro1
+    AnchorSideTop.Control = LabelIntro1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 136
+    Top = 51
+    Width = 487
+    Anchors = [akTop, akLeft, akRight]
+    AutoEdit = False
+    AutoFillColumns = True
+    BorderSpacing.Top = 24
+    BorderSpacing.Right = 12
+    ColCount = 2
+    Columns = <    
+      item
+        PickList.Strings = (
+          'testing'
+        )
+        Title.Caption = 'Teacher''s name'
+        Width = 243
+      end    
+      item
+        Title.Caption = 'Class name'
+        Width = 243
+      end>
+    DefaultColWidth = 200
+    FixedCols = 0
+    Flat = True
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing, goRowSelect, goSmoothScroll]
+    RowCount = 3
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+    ColWidths = (
+      243
+      243
+    )
+  end
+  object LabelIntro2: TLabel
+    AnchorSideLeft.Control = LabelIntro1
+    AnchorSideTop.Control = ButtonLC
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = LabelIntro1
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 272
+    Width = 487
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 48
+    Caption = 'LabelIntro2'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    WordWrap = True
+  end
+  object LabelTN: TLabel
+    AnchorSideLeft.Control = LabelIntro2
+    AnchorSideTop.Control = LabelIntro2
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 311
+    Width = 43
+    BorderSpacing.Top = 24
+    Caption = 'LabelTN'
+  end
+  object Shape1: TShape
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    Left = 255
+    Height = 37
+    Top = 352
+    Width = 0
+  end
+  object LabelCN: TLabel
+    AnchorSideLeft.Control = EditCN
+    AnchorSideTop.Control = LabelTN
+    Left = 261
+    Height = 15
+    Top = 311
+    Width = 45
+    Caption = 'LabelCN'
+  end
+  object EditTN: TEdit
+    AnchorSideTop.Control = LabelTN
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Shape1
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 23
+    Top = 330
+    Width = 239
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    BorderSpacing.Right = 6
+    TabOrder = 2
+    Text = 'EditTN'
+  end
+  object EditCN: TEdit
+    AnchorSideLeft.Control = Shape1
+    AnchorSideTop.Control = EditTN
+    AnchorSideRight.Control = LabelIntro1
+    AnchorSideRight.Side = asrBottom
+    Left = 261
+    Height = 23
+    Top = 330
+    Width = 238
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    TabOrder = 3
+    Text = 'EditCN'
+  end
+  object ButtonAJC: TButton
+    AnchorSideLeft.Control = LabelIntro1
+    AnchorSideTop.Control = EditTN
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = LabelIntro1
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 25
+    Top = 365
+    Width = 487
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'ButtonAJC'
+    OnClick = ButtonAJCClick
+    TabOrder = 4
+  end
+  object LabelIntro3: TLabel
+    AnchorSideLeft.Control = LabelIntro1
+    AnchorSideTop.Control = ButtonAJC
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = LabelIntro1
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 438
+    Width = 487
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 48
+    Caption = 'LabelIntro3'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    WordWrap = True
+  end
+  object ButtonRMS: TButton
+    AnchorSideLeft.Control = LabelIntro1
+    AnchorSideTop.Control = LabelIntro3
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = LabelIntro3
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 25
+    Top = 465
+    Width = 487
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'ButtonRMS'
+    OnClick = ButtonRMSClick
+    TabOrder = 5
+  end
+end

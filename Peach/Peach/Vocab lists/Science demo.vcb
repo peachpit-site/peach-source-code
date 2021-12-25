@@ -1,0 +1,137 @@
+§#[SETT]
+¶
+¶#[SE1]
+¶
+§#[P1]
+¶
+#[Lang1] — LHS
+#[Dir1] — >
+#[Aud1] — 
+¶
+#[Lang2] — RHS
+#[Dir2] — >
+#[Aud2] — 
+¶
+§#[P2]
+¶
+¶A demonstration of Peach teaching something other than languages.
+¶
+§#[P3]
+¶
+¶Use the Alt key together with a number to get a superscript number.
+¶
+§#[P4]
+¶
+ᵃ0 — ₀
+ᵃ1 — ₁
+ᵃ2 — ₂
+ᵃ3 — ₃
+ᵃ4 — ₄
+ᵃ5 — ₅
+ᵃ6 — ₆
+ᵃ7 — ₇
+ᵃ8 — ₈
+ᵃ9 — ₉
+¶
+§#[P5]
+¶
+ᵃ0 — ₀
+ᵃ1 — ₁
+ᵃ2 — ₂
+ᵃ3 — ₃
+ᵃ4 — ₄
+ᵃ5 — ₅
+ᵃ6 — ₆
+ᵃ7 — ₇
+ᵃ8 — ₈
+ᵃ9 — ₉
+¶
+§#[P6]
+¶
+#[DF] — What's the symbol for the element with atomic number <W>? : What's the atomic number of the element with symbol <W>?
+[*] — What element has symbol <W>? : What's the symbol for <W>?
+[+] — What's the scientific name for <W>? : What's the formula for <W>?
+¶
+§#[P7]
+¶
+¶#[TO1] 
+¶
+○ #[O1] — 
+○ #[O2] — 
+○ #[O3] — 
+○ #[O4] — 
+¶
+¶#[TOX1]
+¶
+○ #[WSW1] — 
+○ #[WSS1] — 
+¶
+¶#[TOX2]
+¶
+○ #[WSW2] — 
+○ #[WSS2] — 
+¶
+¶#[TO2]
+¶
+○ #[WFW] — 
+○ #[WFF] — 
+¶
+¶#[TO3]
+¶
+● #[TO3Y] — 
+○ #[TO3N] — 
+¶
+¶#[TO4]
+¶
+#[N0100] — 
+¶
+§#[P8]
+¶
+#[POFont] — 
+#[TIFont] — 
+#[POSize3] — 
+#[BCOLOR] — A8FFFF
+¶
+§#[P9]
+¶
+□ #[Lo2] — 
+□ #[Lo3] — 
+□ #[Lo4] — 
+□ #[Lo5] — 
+□ #[Lo6] — 
+□ #[Lo7] — 
+□ #[Lo8] — 
+¶
+§Science demo
+¶
+§Introduction
+¶
+¶This is a little demo to show Peach teaching something other than languages. It also demonstrates the utility of Peach's flexible question format. (Use it for a bit to see what I mean.)
+¶
+§Keyboard settings
+¶
+¶You can get superscript numerals using Alt + the relevant numeral.
+¶
+§Element numbers and symbols
+¶
+1 — H
+2 — He
+3 — Li
+4 — Be
+5 — B
+¶
+§Element symbols and names
+¶
+[*] H — hydrogen
+[*] He — helium
+[*] Li — lithium
+[*] Be — beryllium
+[*] B — boron
+¶
+§Chemicals and their formulae
+¶
+[+] NH₃ — ammonia
+[+] HNO₃ — nitric acid
+[+] H₃PO₄ — phosphoric acid
+[+] NaPO₄ — sodium phosphate
+[+] CaCO₃ — calcium carbonate

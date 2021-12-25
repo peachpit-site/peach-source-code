@@ -1,0 +1,98 @@
+object FormSignIn: TFormSignIn
+  Left = 64
+  Height = 167
+  Top = 57
+  Width = 289
+  BorderStyle = bsDialog
+  Caption = 'FormSignIn'
+  ClientHeight = 167
+  ClientWidth = 289
+  OnActivate = FormActivate
+  LCLVersion = '2.2.0.1'
+  object LabelUsername: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 12
+    Height = 15
+    Top = 12
+    Width = 81
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    Caption = 'LabelUsername'
+  end
+  object EditUsername: TEdit
+    AnchorSideTop.Control = LabelUsername
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 31
+    Width = 265
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    BorderSpacing.Top = 4
+    BorderSpacing.Right = 12
+    TabOrder = 0
+    Text = 'EditUsername'
+  end
+  object LabelPassword: TLabel
+    AnchorSideTop.Control = EditUsername
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 66
+    Width = 78
+    BorderSpacing.Top = 12
+    Caption = 'LabelPassword'
+  end
+  object EditPassword: TEdit
+    AnchorSideTop.Control = LabelPassword
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 85
+    Width = 265
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    BorderSpacing.Top = 4
+    BorderSpacing.Right = 12
+    EchoMode = emPassword
+    OnKeyUp = EditPasswordKeyUp
+    PasswordChar = '*'
+    TabOrder = 1
+    Text = 'EditPassword'
+  end
+  object ButtonOK: TButton
+    AnchorSideTop.Control = EditPassword
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 24
+    Top = 132
+    Width = 126
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 24
+    BorderSpacing.Right = 6
+    Caption = 'ButtonOK'
+    OnClick = ButtonOKClick
+    TabOrder = 2
+  end
+  object ButtonCancel: TButton
+    AnchorSideTop.Control = ButtonOK
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 150
+    Height = 24
+    Top = 132
+    Width = 127
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 12
+    Caption = 'ButtonCancel'
+    OnClick = ButtonCancelClick
+    TabOrder = 3
+  end
+end

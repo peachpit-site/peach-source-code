@@ -1,0 +1,591 @@
+fdic1 = {
+	"f": "ᚠ",
+	"u": "ᚢ",	
+	"a": "ᚨ",
+	"r": "ᚱ",
+	"k": "ᚳ",
+	"’": "ᚲ",
+	"g": "ᚷ",
+	"h": "ᚺ",
+	"n": "ᚾ",
+	"i": "ᛁ",
+	"z": "ᛉ",
+	"s": "ᛊ",
+	"t": "ᛏ",
+	"b": "ᛒ",
+	"e": "ᛖ",
+	"m": "ᛗ",
+	"l": "ᛚ",
+	"d": "ᛞ",
+	"o": "ᚩ",
+	"ô": "ᛟ",
+	" ": "᛫",
+	"û": "ᚢᚢ",
+	 "â": "ᚨᚨ",
+	"î": "ᛁᛁ",
+	"ê" : "ᛖᛖ"
+}
+
+
+fdic2 = {
+	"kh": "ᛣ",
+	"th": "ᛐ",
+	"sh": "ᛋ",
+	"; ": "; ",
+	", ": ", "
+}
+			
+def futhark(s):
+	t = ""
+	i = 0
+	while i < len(s):
+		if s[i:i+2] in fdic2:
+			t = t + fdic2.get(s[i:i+2])
+			i = i + 2
+		elif s[i:i+1] in fdic1:
+			t = t +fdic1.get(s[i:i+1])
+			i = i + 1
+	return t
+
+def transliterate(entry):			
+	for i in range(len(entry.words[Turgan])):
+		entry.words[Turgan][i] = unfuthark(entry.words[Turgan][i])
+	return entry
+
+def English_pronoun(person, number, gender):
+	if person=='3':
+		person = person + gender
+	
+	pronoun = from_table(person, number,[
+	
+								[	'sg.',					'pl.'				],
+	
+					['1',			'I',					'we'				],
+					['2',			'you {sg.}',		'you {pl.}'	],
+					['3m.',		'he',					'they {m.}'	],
+					['3f.',		'she',				'they {f.}'		],
+					['3n.',		'it',					'they {n.}'	],
+					
+	])			
+	return pronoun
+	
+def Turgan_pronoun(person, number, gender):
+	if person=='3':
+		person = person + gender
+	
+	pronoun = from_table(person, number,[
+	
+								[	'sg.',					'pl.'		],
+	
+					['1',			'ik',					'bês'	],
+					['2',			'du',					'lus'		],
+					['3m.',		'is',					'ês'		],
+					['3n.',		'ita',					'ila'		],
+					['3f.',		'si',					'ilos'	],
+					
+	])			
+	return pronoun
+	
+
+
+def English_noun(w,num,case, mark_case):
+	if num == 'pl.':
+		if has(w,'pl.'):
+			w = what_is(w,'pl.')
+		elif w in ['Dwarf', 'dwarf']:
+			w = w[:-1]+'ves'
+		else:
+			if ends_with(w,'y') and not ends_with(w, sequence(['a','e','i','o','u'], 'y')):
+				w = w[:-1] + 'ies'
+			elif ends_with(w, 's','x','z','sh','ch','o'):
+				w = w + 'es'
+			else:
+				w = w + 's'
+	if mark_case:
+		return w + ' {'+case+'}'
+	else:
+		return w
+
+def replace_last(string, substring, substitute):
+	n = string.rfind(substring)
+	return string[:n]+substitute+string[n+len(substring):]
+
+def get_vowels(s):
+	t = ""
+	for letter in s:
+		if letter in ['a', 'e', 'i', 'o', 'u', 'â', 'ê', 'î', 'ô', 'û']:
+			t = t + letter
+	return t
+
+def get_gender(w):
+	if '!' in brackets[w]:      # Strong noun
+		if ends_with(w,'us'):	# Masculine
+			return 'm.'
+		elif ends_with(w,'a'):
+			return 'f.'
+		else:
+			return 'n.'
+	else:
+		if ends_with(w,'a'):
+			return 'm.'
+		elif ends_with(w,'ê'):
+			return 'f.'
+		elif 'f.' in brackets[w]:
+			return 'f.'
+		else:
+			return 'n.'
+
+def Turgan_noun(w,num,case):
+	
+	if '!' in brackets[w]:      # Strong noun
+		if ends_with(w,'us'):	# Masculine
+			return w[:-2] + from_table(case, num,[
+		
+							[	'sg.',			'pl.'],
+		
+			['nom.',		'us',			'lus'],
+			['obj.',			'ô',			'uns'],
+			['gen.',			'ôs',			'ibê'],
+		
+			])
+			
+		elif ends_with(w,'a'):		# Feminine			
+					return w[:-1] + from_table(case, num,[
+		
+							[	'sg.',			'pl.'],
+		
+			['nom.',		'a',			'ôns'],
+			['obj.',			'a',			'ôns'],
+			['gen.',			'ôs',			'ôns'],
+		
+			])
+	
+		else :								#Neuter	
+			return w + from_table(case, num,[
+		
+							[	'sg.',			'pl.'],
+		
+			['nom.',		'',				'a'],
+			['obj.',			'',				'a'],
+			['gen.',			'is',			'ê'],
+		
+			])
+
+	else:								#Weak or broken noun
+		ending = w[-1:]
+		stem = w[:-1]
+		suffix = ' — '
+		if ending == 'a':
+			suffix = from_table(case, num,[
+		
+							[	'sg.',			'pl.'],
+		
+			['nom.',		'a',			'ans'],
+			['obj.',			'an',			'ans'],
+			['gen.',			'ins',			'ans'],
+		
+			])
+			
+			if num == 'pl.' and '*' in brackets[w]:
+				if starts_with(w, 'u', 'û'):
+					stem = replace_last(stem, 'a', 'â')
+				else :
+					m = -1
+					if ends_with(stem, 'kh', 'th', 'sh'):
+						m = -2
+					stem = stem.replace('u', 'a')
+					stem = stem[:m]+'â'+stem[m:]
+			
+		if ending == 'ô':
+				if 'f.' in brackets[w]:
+					suffix = from_table(case, num,[
+			
+									[	'sg.',			'pl.'],
+	
+					['nom.',		'ô',			'ôns'],
+					['obj.',			'ôn',			'ôns'],
+					['gen.',			'ônis',		'ôns']
+	
+					])		
+					
+				else:
+					suffix = from_table(case, num,[
+			
+									[	'sg.',			'pl.'],
+	
+					['nom.',		'ô',			'ôna'],
+					['obj.',			'ôn',			'ôna'],
+					['gen.',			'ônis',		'ôna']
+	
+					])				
+					
+				if num == 'pl.' and '*' in brackets[w]:
+					signature_vowels = get_vowels(stem)
+					m = -2 if  ends_with(stem, 'kh', 'th', 'sh') else -1
+					if signature_vowels == 'a':
+						stem = stem[:m]+'u'+stem[m:]
+					elif signature_vowels == 'ea':
+						stem = stem.replace('a', 'â')
+					elif signature_vowels == 'u':
+						stem = stem[:m]+'û'+stem[m:]
+					elif signature_vowels == 'oo':
+						stem = stem[0] + 'a' + stem[2] + 'â' + stem[4]
+					elif signature_vowels == 'oi':
+						stem = stem.replace('i', 'î')
+		
+		if ending == 'ê':
+			suffix = from_table(case, num,[
+			
+									[	'sg.',			'pl.'],
+	
+					['nom.',		'ê',			' — '],
+					['obj.',			'ên',			' — '],
+					['gen.',			'êns',		' — ']
+	
+					])				
+
+	return stem + suffix
+	
+
+def definite_article(n, g, case):
+	 
+	return from_table(case+' '+n, g, [
+	
+						[	'm.',			'n.',			'f.'		],
+	
+	['nom. sg.',		'sa',			'dat',		'sa'		],
+	['obj. sg.',		'dan',		'dat',		'da'		],
+
+	['nom. pl.',		'dai',		'da',			'dos'	],
+	['obj. pl.',			'dans',		'da',			'dos'	],
+
+	])
+
+def Turgan_adjective(w, n, g, case):
+	if 'no sg.' in brackets[w]:
+		w = w[:-3]
+	else:
+		w = w[:-1]
+	
+	row = case if n == 'sg.' else 'pl.'
+	
+	return w + from_table(row, g, [
+	
+				[	'm.',		'n.',		'f.'		],
+
+	['nom.',	'a',		'ô',		'a'		],
+	['obj.',		'an',		'ôn',		'ôn'		],
+	['gen.',		'ins',		'ônis',	'ônis'	],
+
+	['pl.',		'ans',	'ôna',	'ôns'	],
+
+	])
+
+def strong_preterite(s, n, v, v1, v2, p, p1, p2):
+	if n == 'sg.':
+		s = s[0]+s[1:].replace(v, v1)
+		if s[0] == p:
+			s = p1 + s[1:]
+	else:
+		s = s[0]+s[1:].replace(v, v2)
+		if s[0] == p:
+			s = p2 + s[1:]
+	return s
+
+def Turgan_verb(vb, p, n, t):
+	if t == 'pres.':
+		trimmed = vb[:-1]
+		if n == '2' or (n == '3' and n == 'sg.'):
+			if '3' in brackets[vb]:
+				trimmed = trimmed + 'i'
+			elif not '2' in brackets[vb]:
+				trimmed = trimmed[:-1] + 'i'
+		return trimmed + from_table(p, n, [
+		
+					[	'sg.',			'pl.'	],
+					
+			['1',		'',				'm'	],
+			['2',		's',			'th'	],
+			['3',		'th',			'nd'	],
+			
+			])
+	else:     # Preterite
+		trimmed = vb
+		if '1' in brackets[vb]:
+			trimmed =  vb[:-3]+'i'
+		if '2' in brackets[vb]:
+			trimmed = vb[:-1]
+		if '3' in brackets[vb]:
+			trimmed = vb[:-1] + 'i'
+		if trimmed != vb:
+			return trimmed + from_table(p, n, [
+					[	'sg.',			'pl.'			],
+
+			['1',		'da',			'dêdum'	],
+			['2',		'dês',		'dêduth'	],
+			['3',		'da',			'dêdun'	],
+			
+			])
+		trimmed = vb[:-2]		
+		if 'I' in brackets[vb]:
+			trimmed = strong_preterite(trimmed, n, 'ê', 'ai', 'i', 'e', 'a', 'i')
+		if 'II' in brackets[vb]:
+			trimmed = strong_preterite(trimmed, n, 'û', 'ô', 'u', 'u', 'u', 'u')
+		if 'III' in brackets[vb]:
+			trimmed = strong_preterite(trimmed, n, 'i', 'a', 'u', 'i', 'a', 'u')
+		if 'IV' in brackets[vb]:
+			trimmed = strong_preterite(trimmed, n, 'i', 'e', 'ê', 'i', 'a', 'e')
+		if 'VI' in brackets[vb]:
+			trimmed = strong_preterite(trimmed, n, 'a', 'ô', 'ô', 'a', 'u', 'u')
+		if 'VIIa' in brackets[vb]:
+			if trimmed[0] in ['a', 'e', 'i', 'u']:
+				trimmed = trimmed[1:]
+			trimmed = trimmed[0]+'ai'+trimmed
+		if 'VIIb' in brackets[vb]:
+			if trimmed[0] in ['a', 'e', 'i', 'u']:
+				trimmed = trimmed[1:]
+			trimmed = trimmed[0]+'ai'+trimmed.replace('ê','ô')
+		return trimmed + from_table(p, n, [
+		
+				[		'sg.',			'pl.'	],
+
+			['1',		'',				'um'	],
+			['2',		'',				'uth'	],
+			['3',		'',				'un'	],
+			
+			])
+		
+
+def English_verb(verb, person, number, tense):
+	trimmed_verb = verb
+	if verb[:3] == 'to ':
+		trimmed_verb = verb[3:]
+	space = trimmed_verb.find(' ') 
+	if space == -1:
+		head = trimmed_verb
+		tail = ''
+	else:
+		head = trimmed_verb[:space]
+		tail = trimmed_verb[space:]
+        
+	if tense == 'pres.':
+		if person == '3' and number == 'sg.':
+			if head == 'have':
+				head = 'ha'
+			if ends_with(head,'y') and not ends_with(head, sequence(['a','e','i','o','u'], 'y')):
+				head = head[:-1] + 'ies'
+			elif ends_with(head, 's','x','z','sh','ch','o'):
+				head = head + 'es'
+			else:
+				head = head + 's'
+	else: #We do the preterite. 
+		if has(verb,'pret.'):
+			head = what_is(verb,'pret.')
+		elif head == 'be':
+			if number == 'sg.' and person == '3rd':
+				head = 'was'
+			else:
+				head = 'were'
+		else:
+			if ends_with(head,'y') and not ends_with(head, sequence(['a','e','i','o','u'], 'y')):
+				head = head[:-1] + 'i'
+			if head[-1] == 'e':
+				head = head + 'd'
+			else:
+				head = head + 'ed'
+				
+	return head + tail
+
+
+def to_do(p,n,t):
+	if t == 'pret.':
+		return 'did'
+	else:
+		return 'does' if p == '3' and n == 'sg.' else 'do'
+
+def indefinite_article(w,n):
+	if n == 'pl.':
+		return ' '
+	else:
+		return ' an ' if starts_with(w,'a','e','i','o','u')  else ' a '
+
+def to_be(p,n,t):
+	return from_table(p, t+' '+n, [
+			[	'pres. sg.',	'pres. pl.',	'pret. sg.',	'pret. pl.'	],
+			
+		['1',	'am',			'are',			'was',			'were'		],
+		['2', 'are',			'are',			'were',			'were'		],
+		['3', 'is',				'are',			'was',			'were'		],
+	])
+	
+def wisan(p,n,t):
+	return from_table(p, t+' '+n,  [
+			[	'pres. sg.',	'pres. pl.',	'pret. sg.',	'pret. pl.'		],
+			
+		['1',	'im',				'silum',		'bas',			'bêsum'		],
+		['2', 'is',				'siluth',		'bast',			'bêsuth'		],
+		['3', 'ist',				'sind',			'bas',			'bêsun'		],
+	])
+
+def sentence_from(tenses, sentence_structures):
+	sentence_structure = random.choice(sentence_structures)
+	note(sentence_structure)
+	tense = random.choice(tenses)
+	if sentence_structure[0] == 'P':
+		person = random.choice(['1', '2', '3'])
+		gender = random.choice(['m.','f.', 'n.'])
+	else:
+		agent = fetch('p')
+	if sentence_structure[0] == 'Q':
+		format[English] = standard_format('', True, '?')
+		if question_language == English:
+			format[Turgan] = standard_format('', True, '?')
+	number = random.choice(['sg.', 'pl.'])
+	if sentence_structure.find('A') != -1:
+		adjective = fetch('a')
+	if sentence_structure.find('G') != -1:
+		possessor = fetch('p')
+	possessor_number = random.choice(['sg.', 'pl.'])
+	if sentence_structure == 'SVO':
+		verb = fetch('v')
+		grammar(English,  'the ', [agent, English_noun, number, '', ''] , ' ', [verb, English_verb, '3', number, tense] ,' the ', [noun, English_noun, noun_number, '', ''])
+		grammar(Turgan,  [definite_article, number, [agent, get_gender], 'nom.'], ' ', [agent, Turgan_noun, number, 'nom.'] , ' ', [verb, Turgan_verb, '3', number, tense] , ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'])
+	elif sentence_structure == 'SVOA':
+		verb = fetch('v')
+		grammar(English,  'the ', [agent, English_noun, number, '', ''] , ' ', [verb, English_verb, '3', number, tense] ,' the ', [adjective], ' ', [noun, English_noun, noun_number, '', ''])
+		grammar(Turgan,  [definite_article, number, [agent, get_gender], 'nom.'], ' ', [agent, Turgan_noun, number, 'nom.'] , ' ', [verb, Turgan_verb, '3', number, tense] , ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'], ' ', [adjective, Turgan_adjective, noun_number, [noun, get_gender], 'obj.'])	
+	elif sentence_structure == 'SV':
+		verb = fetch('vi')
+		grammar(English,  'the ', [agent, English_noun, number, '', ''] , ' ', [verb, English_verb, '3', number, tense])
+		grammar(Turgan,   [definite_article, number, [agent, get_gender], 'nom.'] , ' ', [agent, Turgan_noun, number, 'nom.'] , ' ', [verb, Turgan_verb, '3', number, tense])
+	elif sentence_structure == 'SAV':
+		verb = fetch('vi')
+		grammar(English,  'the ', [adjective], ' ', [agent, English_noun, number, '', ''] , ' ', [verb, English_verb, '3', number, tense])
+		grammar(Turgan,   [definite_article, number, [agent, get_gender], 'nom.'] , ' ', [agent, Turgan_noun, number, 'nom.'] , ' ', [adjective, Turgan_adjective, number, [agent, get_gender], 'nom.'] , ' ', [verb, Turgan_verb, '3', number, tense])
+	elif sentence_structure == 'PVO':
+		verb = fetch('v')
+		grammar(English,  [English_pronoun, person, number,  gender] , ' ', [verb, English_verb, person, number, tense] ,' the ', [noun, English_noun, noun_number, '', ''])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender], ' ', [verb, Turgan_verb, person, number, tense] , ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'])
+	elif sentence_structure == 'PVOG':
+		verb = fetch('v')
+		grammar(English,  [English_pronoun, person, number,  gender] , ' ', [verb, English_verb, person, number, tense] ,' the ', [noun, English_noun, noun_number, '', ''] , ' of the ', [possessor, English_noun, possessor_number, '', ''])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender], ' ', [verb, Turgan_verb, person, number, tense] , ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'], ' ', [possessor, Turgan_noun, possessor_number, 'gen.'])
+	elif sentence_structure == 'PV':
+		verb = fetch('vi')
+		grammar(English,  [English_pronoun, person, number,  gender] , ' ', [verb, English_verb, person, number, tense])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender] , ' ', [verb, Turgan_verb, person, number, tense])
+	elif sentence_structure == 'SnV':
+		verb = fetch('vi')
+		grammar(English,  'the ', [agent, English_noun, number, '', ''] , ' ', [to_do, '3', number, tense] ,' not ', [verb, English_verb, '3', 'pl.', 'pres.'])
+		grammar(Turgan,   [definite_article, number, [agent, get_gender], 'nom.'] , ' ', [agent, Turgan_noun, number, 'nom.'] , ' ni ', [verb, Turgan_verb, '3', number, tense])
+	elif sentence_structure == 'SnVO':
+		verb = fetch('v')
+		grammar(English,  'the ', [agent, English_noun, number, '', ''] , ' ', [to_do, '3', number, tense] ,' not ', [verb, English_verb, '3', 'pl.', 'pres.'] ,' the ', [noun, English_noun, noun_number, '', ''])
+		grammar(Turgan,  [definite_article, number, [agent, get_gender], 'nom.'], ' ', [agent, Turgan_noun, number, 'nom.'] , ' ni ', [verb, Turgan_verb, '3', number, tense] , ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'])
+	elif sentence_structure == 'PnV':
+		verb = fetch('vi')
+		grammar(English,  [English_pronoun, person, number,  gender], ' ', [to_do, person, number, tense] ,' not ', [verb, English_verb,  '3', 'pl.', 'pres.'])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender] , ' ni ', [verb, Turgan_verb, person, number, tense])
+	elif sentence_structure == 'PnVO':
+		verb = fetch('v')
+		grammar(English,  [English_pronoun, person, number,  gender] , ' ', [to_do, person, number, tense] ,' not ', [verb, English_verb,  '3', 'pl.', 'pres.'] ,' the ', [noun, English_noun, noun_number, '', ''])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender], ' ni ', [verb, Turgan_verb, person, number, tense] , ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'])
+	elif sentence_structure == 'PnVOG':
+		verb = fetch('v')
+		grammar(English,  [English_pronoun, person, number,  gender] , ' ', [to_do, person, number, tense] ,' not ', [verb, English_verb,  '3', 'pl.', 'pres.'] ,' the ', [noun, English_noun, noun_number, '', ''] , ' of the ', [possessor, English_noun, possessor_number, '', ''])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender], ' ni ', [verb, Turgan_verb, person, number, tense] , ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'], ' ', [possessor, Turgan_noun, possessor_number, 'gen.'])
+	elif sentence_structure == 'QVO':
+		inter = fetch('q1')
+		verb = fetch('v')
+		grammar(English, [inter], ' ',[verb, English_verb, '3', 'sg.', tense] ,' the ', [noun, English_noun, noun_number, '', ''])
+		grammar(Turgan, [inter], ' ',[verb, Turgan_verb, '3', 'sg.', tense], ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'])
+	elif sentence_structure == 'QV':
+		inter = fetch('q1')
+		verb = fetch('vi')
+		grammar(English, [inter], ' ',[verb, English_verb, '3', 'sg.', tense])
+		grammar(Turgan, [inter], ' ',[verb, Turgan_verb, '3', 'sg.', tense])
+	elif sentence_structure == 'QVSO':
+		inter = fetch('q2')
+		verb = fetch('v')
+		grammar(English, [inter], ' ',[to_do, '3', number , tense], ' the ', [agent, English_noun, number, '', ''], ' ', [verb, English_verb, '3', 'pl.', 'pres.'],' the ', [noun, English_noun, noun_number, '', ''])
+		grammar(Turgan, [inter], ' ',[verb, Turgan_verb, '3', number , tense], ' ', [definite_article, number, [agent, get_gender], 'nom.'] , ' ', [agent, Turgan_noun, number, 'nom.'], ' ', [definite_article, number, [noun, get_gender], 'obj.'], ' ', [noun, Turgan_noun, noun_number, 'obj.'])
+	elif sentence_structure == 'QVS':
+		inter = fetch('q2')
+		verb = fetch('vi')
+		grammar(English, [inter], ' ',[to_do, '3', number, tense], ' the ', [agent, English_noun, number, '', ''], ' ', [verb, English_verb, '3', 'pl.', 'pres.'])
+		grammar(Turgan, [inter], ' ',[verb, Turgan_verb, '3', number, tense], ' ', [definite_article, number, [agent, get_gender], 'nom.'] , ' ', [agent, Turgan_noun, number, 'nom.'])	
+	elif sentence_structure == 'PBO':
+		agent = fetch('p')
+		grammar(English,  [English_pronoun, person, number,  gender] , ' ', [to_be, person, number, tense] , [agent, indefinite_article, number],  [agent, English_noun, number, '', ''])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender], ' ', [wisan, person, number, tense] , ' ', [agent, Turgan_noun, number, 'nom.'])
+	elif sentence_structure == 'PBA':
+		grammar(English,  [English_pronoun, person, number,  gender] , ' ', [to_be, person, number, tense] , ' ',  [adjective])
+		grammar(Turgan,  [Turgan_pronoun, person, number,  gender], ' ', [wisan, person, number, tense] , ' ', [adjective, Turgan_adjective, number, gender, 'nom.'])
+	elif sentence_structure == 'SBA':
+		grammar(English,   'the ', [noun, English_noun, number, '', ''] , ' ', [to_be, '3', number, tense] , ' ', [adjective])
+		grammar(Turgan,  [definite_article, number, [noun, get_gender], 'nom.'], ' ', [noun, Turgan_noun, number, 'nom.'] ,  ' ', [wisan, '3', number, tense] , ' ', [adjective, Turgan_adjective, number, [noun, get_gender],'nom.'])
+
+	
+
+		
+noun = fetch('n')
+noun_number = random.choice(['sg.', 'pl.'])
+if 'no pl.' in noun.brackets:
+	noun_number = 'sg.'
+
+if topic_directive in ['D', 'G', 'Adj', 'N', 'P']:
+	format[Turgan] = standard_format('', False, '')
+	format[English] = standard_format('', False, '')
+else :
+	format[English] = standard_format('', True, '.')
+	if (not topic_directive in  ['V', 'V2']) and question_language == Turgan and questions == 'written':		
+		format[Turgan] = futhark
+	else:
+		format[Turgan] = standard_format('', True, '.')
+directive = '[T]'
+
+if topic_directive in ['D', 'G', 'Adj']:
+	case = random.choice(['nom.', 'obj.'])
+if topic_directive == 'N':	
+	case = random.choice(['nom.', 'obj.', 'gen.'])
+
+if topic_directive == 'N':
+	grammar(English,  [noun, English_noun, noun_number, case, 'Y'])
+	grammar(Turgan,  [noun, Turgan_noun, noun_number, case])
+elif topic_directive == 'D':	
+	grammar(English,  'the ', [noun, English_noun, noun_number, case, 'Y'])
+	grammar(Turgan,  [definite_article, noun_number, [noun, get_gender], case] , ' ', [noun, Turgan_noun, noun_number, case])
+elif topic_directive == 'G':
+	possessor = fetch('p')
+	possessor_number = random.choice(['sg.', 'pl.'])
+	grammar(English,  'the ', [noun, English_noun, noun_number, case, 'Y'], ' of the ', [possessor, English_noun, noun_number, case, ''])
+	grammar(Turgan,  [definite_article, noun_number, [noun, get_gender], case] , ' ', [noun, Turgan_noun, noun_number, case], ' ', [possessor, Turgan_noun, possessor_number, 'gen.'])	
+elif topic_directive == 'Adj':
+	adjective = fetch('a')
+	if 'no sg.' in adjective.brackets:
+		noun_number = 'pl.'
+	grammar(English,  'the ', [adjective], ' ', [noun, English_noun, noun_number, case, 'Y'])
+	grammar(Turgan,  [definite_article, noun_number, [noun, get_gender], case] , ' ', [noun, Turgan_noun, noun_number, case] , ' ', [adjective, Turgan_adjective, noun_number, [noun, get_gender], case])
+elif topic_directive == 'P':
+	preposition = fetch('pr')
+	grammar(English,  [preposition] ,  ' the ', [noun, English_noun, noun_number, '', ''])
+	if '+ gen.' in preposition.brackets:
+		grammar(Turgan,  [preposition], ' ', [noun, Turgan_noun, noun_number, 'gen.'])
+	else:	
+		grammar(Turgan,  [preposition], ' ', [definite_article, noun_number, [noun, get_gender], 'obj.'] , ' ', [noun, Turgan_noun, noun_number, 'obj.'])
+elif topic_directive == 'V':
+	sentence_from(['pres.'],['SVO', 'SV'])
+elif topic_directive == 'V2':
+	sentence_from(['pres.'],['PVO', 'PV'])
+elif topic_directive == 'Pret' :
+	sentence_from(['pret.'],['SVO', 'SV', 'PVO', 'PV'])
+elif topic_directive == 'Prac 1' :
+	sentence_from(['pres.', 'pret.'],['PVOG', 'SVOA',  'SAV', 'SV', 'SVO', 'PVO', 'PV'])
+elif topic_directive == 'B':
+	sentence_from(['pres.', 'pret.'],['PBO', 'SBA', 'PBA'])
+elif topic_directive == 'Neg':
+	sentence_from(['pres.', 'pret.'],[ 'PnVOG', 'PnVO', 'PnV','SnVO','SnV'])
+elif topic_directive == 'Q':
+	sentence_from(['pres.', 'pret.'],['QVO', 'QV', 'QVSO', 'QVS'])
+elif topic_directive == 'Prac 2' :
+	sentence_from(['pres.', 'pret.'],['QVO', 'QV', 'QVSO', 'QVS', 'PBO', 'SBA', 'PBA', 'PnVOG', 'PnVO', 'PnV','SnVO','SnV', 'PVOG', 'SVOA',  'SAV', 'SV', 'SVO', 'PVO', 'PV'])

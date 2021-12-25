@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\My_Lazarus\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1390975401"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq &quot;-FiC:\Users\owner\Documents\Peach project\Peach main source code\Packages\PythonPackage&quot; &quot;-FiC:\Users\owner\Documents\Peach project\Peach main source code\Packages\richmemo\ide&quot; &quot;-FiC:\Users\owner\Documents\Peach project\Peach main source code\Packages\WordMemo&quot; -FuC:\My_Lazarus\packager\units\x86_64-win64 -FuC:\My_Lazarus\components\lazutils\lib\x86_64-win64 -FuC:\My_Lazarus\components\freetype\lib\x86_64-win64 -FuC:\My_Lazarus\lcl\units\x86_64-win64 -FuC:\My_Lazarus\lcl\units\x86_64-win64\win32 &quot;-FuC:\Users\owner\Documents\Peach project\Peach main source code\Packages\richmemo\lib\x86_64-win64&quot; &quot;-FuC:\Users\owner\Documents\Peach project\Peach main source code\Packages\Peach\&quot; &quot;-FUC:\Users\owner\Documents\Peach project\Peach main source code\Packages\Peach\lib\x86_64-win64\&quot; -dLCL -dLCLwin32 PeachPackage.pas"/>
+</CONFIG>

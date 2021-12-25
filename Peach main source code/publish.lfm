@@ -1,0 +1,221 @@
+object FormPublish: TFormPublish
+  Left = 55
+  Height = 412
+  Top = 54
+  Width = 528
+  BorderStyle = bsDialog
+  Caption = 'FormPublish'
+  ClientHeight = 412
+  ClientWidth = 528
+  LCLVersion = '2.2.0.1'
+  object LabelF: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = EditP
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditPN
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 198
+    Width = 240
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    Caption = 'LabelF'
+  end
+  object ComboBox1: TComboBox
+    AnchorSideLeft.Control = LabelF
+    AnchorSideTop.Control = LabelF
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditPN
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 225
+    Width = 240
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    ItemHeight = 15
+    OnChange = ComboBox1Change
+    TabOrder = 3
+    Text = 'ComboBox1'
+  end
+  object ListBox1: TListBox
+    AnchorSideLeft.Control = ComboBox1
+    AnchorSideTop.Control = ComboBox1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditPN
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Button1
+    Left = 12
+    Height = 116
+    Top = 248
+    Width = 240
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ItemHeight = 0
+    MultiSelect = True
+    OnKeyDown = ListBox1KeyDown
+    TabOrder = 4
+  end
+  object LabelPN: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 12
+    Height = 15
+    Top = 12
+    Width = 44
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    Caption = 'LabelPN'
+  end
+  object EditPN: TEdit
+    AnchorSideLeft.Control = LabelPN
+    AnchorSideTop.Control = LabelPN
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrCenter
+    Left = 12
+    Height = 23
+    Top = 39
+    Width = 240
+    BorderSpacing.Top = 12
+    TabOrder = 0
+    Text = 'EditPN'
+  end
+  object LabelP: TLabel
+    AnchorSideLeft.Control = LabelPN
+    AnchorSideTop.Control = EditVN
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 136
+    Width = 35
+    BorderSpacing.Top = 12
+    Caption = 'LabelP'
+  end
+  object EditP: TEdit
+    AnchorSideLeft.Control = LabelPN
+    AnchorSideTop.Control = LabelP
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditPN
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 163
+    Width = 240
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    TabOrder = 2
+    Text = 'EditP'
+  end
+  object LabelVN: TLabel
+    AnchorSideLeft.Control = LabelPN
+    AnchorSideTop.Control = EditPN
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 74
+    Width = 44
+    BorderSpacing.Top = 12
+    Caption = 'LabelVN'
+  end
+  object EditVN: TEdit
+    AnchorSideLeft.Control = LabelPN
+    AnchorSideTop.Control = LabelVN
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = EditPN
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 23
+    Top = 101
+    Width = 240
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    TabOrder = 1
+    Text = 'EditVN'
+  end
+  object Button1: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 230
+    Height = 25
+    Top = 376
+    Width = 68
+    AutoSize = True
+    BorderSpacing.Top = 12
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 6
+  end
+  object Image1: TImage
+    AnchorSideLeft.Control = LockdownGroup
+    AnchorSideTop.Control = LockdownGroup
+    AnchorSideTop.Side = asrBottom
+    Left = 272
+    Height = 64
+    Top = 296
+    Width = 64
+    BorderSpacing.Top = 12
+  end
+  object ButtonChangeIcon: TButton
+    AnchorSideLeft.Control = Image1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Image1
+    AnchorSideTop.Side = asrCenter
+    Left = 348
+    Height = 25
+    Top = 316
+    Width = 90
+    AutoSize = True
+    BorderSpacing.Left = 12
+    Caption = 'ChangeIcon'
+    OnClick = ButtonChangeIconClick
+    TabOrder = 5
+  end
+  object LockdownGroup: TCheckGroup
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 272
+    Height = 272
+    Top = 12
+    Width = 244
+    Anchors = [akTop, akLeft, akRight]
+    AutoFill = True
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 12
+    Caption = 'LockdownGroup'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 252
+    ClientWidth = 240
+    Items.Strings = (
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+      ''
+    )
+    TabOrder = 7
+    Data = {
+      0A00000002020202020202020202
+    }
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Left = 204
+    Top = 50
+  end
+end

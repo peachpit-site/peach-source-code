@@ -1,0 +1,72 @@
+# Another obsolete .grm file.
+
+def pronoun(person,number,gender):
+    if person == "1st" and number == "sg.":
+        return "I"
+    if person == "2nd" and number == "sg.":
+        return "you {"+gender+" sg.}"
+    if person == "3rd" and number == "sg.":
+        return "he/she" 
+    if person == "1st" and number == "pl.":
+        return "we"
+    if person == "2nd" and number == "pl.":
+        return "you {pl.}"
+    if person == "3rd" and number == "pl.":
+        return "they {"+gender+"}"
+        
+def English_preterite(word,person,number):
+    w = word
+    if w[:3] == "to ":
+        w = w[3:]
+    if w.find(" ") == -1:
+        head = w
+        tail = ""
+    else:
+        head = w[:w.find(" ")]
+        tail = w[w.find(" "):]
+    if head[:3] == "to ":
+        head = head[3:]
+    if has(word,"pret."):
+        head = what_is(word,"pret.")
+    elif head == "be":
+        if number == "sg." and person == "3rd":
+            head = "was"
+        else:
+            head = "were"
+    else:
+        if head[-1] == "y" and not head[-2] in ["a","e","i","o","u"]:
+            head = head[:-1] + "i"
+        if head[-1] == "e":
+            head = head + "d"
+        else:
+            head = head + "ed"
+    return head + tail
+    
+def Akkadian_preterite(w,person,number,gender):
+    base = "<Oopsie, you forgot the theme vowel>"
+    for theme_vowel in ["a","i","u"]:
+        if theme_vowel in brackets[w]:
+            base = w[0] + w[2] + theme_vowel + w[4]
+    if person == "3rd" and number == "sg.":
+        return "i" + base
+    if person == "2nd" and number == "sg." and gender == "m.":
+        return "ta" + base
+    if person == "2nd" and number == "sg." and gender == "f.":
+        return "ta" + base + "ī"
+    if person == "1st" and number == "sg.":
+        return "a" + base
+    if person == "3rd" and number == "pl." and gender == "m.":
+        return "i" + base + "ū"
+    if person == "3rd" and number == "pl." and gender == "f.":
+        return "i" + base + "ā"
+    if person == "2nd" and number == "pl.":
+        return "ta" + base + "ā"
+    if person == "1st" and number == "pl.":
+        return "ni" + base
+
+person = random.choice(["1st", "2nd", "3rd"])
+number = random.choice(["sg.", "pl."])
+gender = random.choice(["m.", "f."])
+ 
+grammar(English, [pronoun, person, number, gender], " " , [entry, English_preterite, person, number])
+grammar(Akkadian, [entry, Akkadian_preterite, person, number, gender])

@@ -1,0 +1,159 @@
+object FormAssignments: TFormAssignments
+  Left = 62
+  Height = 313
+  Top = 72
+  Width = 587
+  Caption = 'FormAssignments'
+  ClientHeight = 313
+  ClientWidth = 587
+  OnActivate = FormActivate
+  LCLVersion = '2.2.0.1'
+  object AGrid: TStringGrid
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = LabelIntro
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonOK
+    Left = 12
+    Height = 213
+    Top = 51
+    Width = 563
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoFillColumns = True
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 24
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    ColCount = 6
+    Columns = <    
+      item
+        ButtonStyle = cbsCheckboxColumn
+        SizePriority = 0
+        Title.Color = clForm
+        Title.Caption = ''
+        Width = 24
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 157
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 157
+      end    
+      item
+        SizePriority = 0
+        Title.Caption = 'Title'
+        Width = 88
+      end    
+      item
+        ReadOnly = True
+        SizePriority = 0
+        Title.Caption = 'Title'
+        Width = 68
+      end    
+      item
+        SizePriority = 0
+        Title.Caption = 'Title'
+        Width = 50
+      end>
+    FixedCols = 0
+    Flat = True
+    ScrollBars = ssVertical
+    TabOrder = 0
+    OnSelectCell = AGridSelectCell
+    ColWidths = (
+      24
+      157
+      157
+      88
+      68
+      50
+    )
+    Cells = (
+      4
+      0
+      1
+      '0'
+      0
+      2
+      '0'
+      0
+      3
+      '0'
+      0
+      4
+      '0'
+    )
+  end
+  object ButtonOK: TButton
+    AnchorSideLeft.Control = AGrid
+    AnchorSideTop.Control = AGrid
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Shape1
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 12
+    Height = 25
+    Top = 276
+    Width = 275
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 6
+    BorderSpacing.Bottom = 12
+    Caption = 'ButtonOK'
+    OnClick = ButtonOKClick
+    TabOrder = 1
+  end
+  object ButtonRMS: TButton
+    AnchorSideLeft.Control = Shape1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AGrid
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AGrid
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 299
+    Height = 25
+    Top = 276
+    Width = 276
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 12
+    BorderSpacing.Bottom = 12
+    Caption = 'ButtonRMS'
+    OnClick = ButtonRMSClick
+    TabOrder = 2
+  end
+  object Shape1: TShape
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    Left = 293
+    Height = 40
+    Top = 230
+    Width = 0
+  end
+  object LabelIntro: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 12
+    Height = 15
+    Top = 12
+    Width = 563
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 12
+    Caption = 'LabelIntro'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    WordWrap = True
+  end
+end

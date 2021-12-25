@@ -1,0 +1,175 @@
+§#[SETT]
+¶
+¶#[SE1]
+¶
+§#[P1]
+¶
+#[Lang1] — Akkadian
+#[Dir1] — >
+#[Aud1] — 
+¶
+#[Lang2] — English
+#[Dir2] — >
+#[Aud2] — 
+¶
+§#[P2]
+¶
+¶This is mainly a demonstration of grammar, though it also exists because my original intention in writing Peach was to teach myself Akkadian and one day I will, I promise.
+¶
+§#[P3]
+¶
+¶Long vowels are produced by the Alt key, e.g. Alt + a will get you ā. Typing a, e, i or u again will produce â, ê, î or û respectively, e.g. āa turns into â.
+¶
+¶Alt + h, s or t will produce the appropriate emphatic consonant, ḫ, ṣ or ṭ. Ctrl + s will produce š.
+¶
+§#[P4]
+¶
+ᵃa — ā
+ᵃe — ē
+ᵃi — ī
+ᵃu — ū
+ᵃs — ṣ
+ᵃt — ṭ
+ᵃh — ḫ
+āa — â
+ēe — ê
+īi — î
+ūu — û
+ᶜs — š
+¶
+§#[P5]
+¶
+¶ No keyboard settings have been supplied for this language.
+¶
+§#[P6]
+¶
+#[DF] — What's the <L> for “<W>”? : What's the <L> for “<W>”?
+[T] — Translate “<W>”. : Translate “<W>”.
+[N.] — Randomly decline noun
+[V.] — Randomly conjugate verb
+[v.] — Random phrase
+[v.i.] — Random phrase
+[n.] — Random phrase
+¶
+§#[P7]
+¶
+¶#[TO1] 
+¶
+○ #[O1] — 
+○ #[O2] — 
+○ #[O3] — 
+○ #[O4] — 
+¶
+¶#[TOX1]
+¶
+○ #[WSW1] — 
+○ #[WSS1] — 
+¶
+¶#[TOX2]
+¶
+○ #[WSW2] — 
+○ #[WSS2] — 
+¶
+¶#[TO2]
+¶
+○ #[WFW] — 
+○ #[WFF] — 
+¶
+¶#[TO3]
+¶
+● #[TO3Y] — 
+○ #[TO3N] — 
+¶
+¶#[TO4]
+¶
+#[N0100] — 
+¶
+§#[P8]
+¶
+#[POFont] — 
+#[TIFont] — 
+#[POSize3] — 
+#[BCOLOR] — CEB3BF
+¶
+§#[P9]
+¶
+□ #[Lo2] — 
+□ #[Lo3] — 
+□ #[Lo4] — 
+□ #[Lo5] — 
+□ #[Lo6] — 
+□ #[Lo7] — 
+□ #[Lo8] — 
+¶
+§Akkadian demo
+¶
+§Introduction
+¶
+¶These are just some exercises in Akkadian grammar. Since these were the first grammar plugins I wrote they are now obsolete, and while they still work they should not be used as a model.
+¶
+¶Nor have any teaching materials been provided, so it's not much use to you. Still, if you want to play with it, choose the last topic and watch it make surreal Akkadian phrases. If you don't get an education it'll give you a certain amount of fun along the lines of Mad Libs.
+¶
+§Keyboard settings
+¶
+¶To give written answers, you'll need to know about the keyboard settings. Long vowels are produced by the Alt key, eg. Alt + a will get you ā. Typing a, e, i or u again will produce â, ê, î or û respectively, e.g. āa turns into â.
+¶
+¶Alt + h, s or t will produce the appropriate emphatic consonant, ḫ, ṣ or ṭ. Ctrl + s will produce š.
+¶
+§[Akkadian noun] Nouns
+¶
+[N.] aššatum — wife [pl. wives]
+[N.] bītum — house, estate; household
+[N.] emūqum — army, strength, ability; value, power, force
+[N.] īnum — eye, spring
+[N.] išdum — foundation, bottom, administration; foundations, organization
+[N.] libbum — heart, mind, thought, center; wish, inside, midst
+[N.] mutum [m.] — husband, man [pl. men]
+[N.] nārum (f.) — river, canal
+[N.] ṭuppum — tablet, document; letter
+[N.] ummum [f] — mother
+[N.] uznum — ear, understanding
+¶
+§[Akkadian verb] Verbs
+¶
+[V.] damāqum (i) — to improve, prosper; become good [pret. became], become better [pret. became]
+[V.] danānum (i) — to become strong [pret. became]; strengthen, grow strong [pret. grew]
+[V.] ḫalāqum (i) — to disappear, escape, get lost [pret. got]; go missing [pret. went], vanish
+[V.] kašādum (u) — to arrive, conquer; defeat, reach, achieve
+[V.] maḫāṣum (a) — to strike [pret. struck], wound, kill; hit [pret. hit]
+[V.] maqātum (u) — to fall [pret. fell], happen; occur [pret. occurred], arrive, collapse
+[V.] marāṣum (a) — to be sick, fall ill [pret. fell], hurt [pret. hurt]; afflict, fall sick [pret. fell], be ill, become sick [pret. became], sicken, be painful, be troublesome
+[V.] rapāšum (i) — to become broad [pret. became]; become wide [pret. became], broaden, broaden out, widen
+[V.] ṣabātum (a) — to seize, capture; arrest
+[V.] šakānum (u) — to establish, set down [pret. set];  place, put [pret. put], set [pret. set], install
+[V.] šarāqum (i) — to steal [pret. stole]
+¶
+§[Akkadian phrase] Phrases
+¶
+¶This will produce random phrases using the vocabulary supplied. First some nouns:
+¶
+[n.] aššatum — wife [pl. wives]
+[n.] bītum — house, estate; household
+[n.] emūqum — army, strength, ability; armed forces, value, power, force
+[n.] īnum — eye, spring
+[n.] išdum — foundation, bottom, administration; foundations, organization
+[n.] libbum — heart, mind, thought, center; wish, inside, midst
+[n.] mutum [m.] — husband, man [pl. men]
+[n.] nārum (f.) — river, canal
+[n.] ṭuppum — tablet, document; letter
+[n.] ummum [f.] — mother
+[n.] uznum — ear, understanding
+¶
+¶And some verbs to go with them:
+¶
+[v.i.] damāqum (i) — to improve, prosper; become good [pret. became], become better [pret. became]
+[v.i.] danānum (i) — to become strong [pret. became]; strengthen, grow strong [pret. grew]
+[v.i.] ḫalāqum (i) — to disappear, escape, get lost [pret. got]; go missing [pret. went], vanish
+[v.i.] kašādum (u) — to arrive, conquer; defeat, reach, achieve
+[v.] maḫāṣum (a) — to strike [pret. struck], wound, kill; hit [pret. hit]
+[v.i.] maqātum (u) — to fall [pret. fell], happen; occur [pret. occurred], arrive, collapse
+[v.i.] marāṣum (a) (int.) — to be sick, fall ill [pret. fell]; fall sick [pret. fell], be ill, become sick [pret. became], sicken
+[v.] marāṣum (a) (tr.) — hurt [pret. hurt], afflict; trouble
+[v.i.] rapāšum (i) — to become broad [pret. became]; become wide [pret. became], broaden, broaden out, widen
+[v.] ṣabātum (a) — to seize, capture; arrest
+[v.] šakānum (u) — to establish, set down [pret. set];  place, put [pret. put], set [pret. set], install
+[v.] šarāqum (i) — to steal [pret. stole]

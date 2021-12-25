@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="PeachPackage"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\PythonPackage;..\richmemo\ide;..\WordMemo"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files Count="8">
+      <Item1>
+        <Filename Value="vocab.pas"/>
+        <UnitName Value="Vocab"/>
+      </Item1>
+      <Item2>
+        <Filename Value="commonstringfunctions.pas"/>
+        <UnitName Value="CommonStringFunctions"/>
+      </Item2>
+      <Item3>
+        <Filename Value="applanguage.pas"/>
+        <UnitName Value="AppLanguage"/>
+      </Item3>
+      <Item4>
+        <Filename Value="rminlinepicture.pas"/>
+        <UnitName Value="RMInlinePicture"/>
+      </Item4>
+      <Item5>
+        <Filename Value="internet.pas"/>
+        <UnitName Value="Internet"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\PythonPackage\pythonpackage.lpk"/>
+        <Type Value="Text"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\richmemo\ide\richmemo_design.lpk"/>
+        <Type Value="Text"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\WordMemo\wordmemo.lpk"/>
+        <Type Value="Text"/>
+      </Item8>
+    </Files>
+    <CompatibilityMode Value="True"/>
+    <RequiredPkgs Count="3">
+      <Item1>
+        <PackageName Value="richmemopackage"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

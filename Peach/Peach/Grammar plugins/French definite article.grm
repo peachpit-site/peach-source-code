@@ -1,0 +1,46 @@
+def gender(word):
+    if word[-1] == "e":
+        g = "f."
+    else:
+        g = "m."
+    if "m." in brackets[word]:
+        g = "m."
+    if "f." in brackets[word]:
+        g = "f."
+    return g
+
+def English_noun(w,num):
+    if num == "pl.":
+         if has(w,"pl."):
+              w = what_is(w,"pl.")
+         else:
+              if w[-1:] == "y" and not w[-2] in ["a","e","i","o","u"]:
+                   w = w[:-1] + "ies"
+              elif w[-1] in ["s","x","z"] or w[-2:] in ["sh","ch"]:
+                  w = w + "es"
+              else:
+                  w = w + "s"
+    return "the " + w
+    
+def French_noun(w,number,gender):
+    article = "unassigned"
+    if number == "pl.":
+        if w[-3:] == "eau":
+            w = w + "x"
+        else:
+            w = w + "s"
+    if number == "sg.":
+        if gender == "m.":
+            article = "le "
+        if gender == "f.":
+            article = "la "
+        if w[0] in ["a","e","i","o","u"]:
+            article = "l'"
+    else:
+        article = "les "
+    w = article + w
+    return w
+
+number = random.choice(["sg.", "pl."])  
+grammar(English, [entry, English_noun, number])
+grammar(French, [entry, French_noun, number, [entry, gender]])

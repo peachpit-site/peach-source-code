@@ -1,0 +1,153 @@
+# This is obsolete as an example, it was written before a lot of useful
+# features were introduced to Sybil.
+
+def gender(word):
+    if len(word)>=6 and word[-3] == "t":
+        g = "f."
+    else:
+        g = "m."
+    if "m." in brackets[word]:
+        g = "m."
+    if "f." in brackets[word]:
+        g = "f."
+    return g
+
+def pronoun(w,person,number,gender):
+    if person == "1st" and number == "sg.":
+        return "I"
+    if person == "2nd" and number == "sg.":
+        return "you {"+gender+" sg.}"
+    if person == "3rd" and number == "sg.":
+        return "he/she" 
+    if person == "1st" and number == "pl.":
+        return "we"
+    if person == "2nd" and number == "pl.":
+        return "you {pl.}"
+    if person == "3rd" and number == "pl.":
+        return "they {"+gender+"}"
+        
+def English_preterite(word,person,number):
+    w = word
+    if w[:3] == "to ":
+        w = w[3:]
+    if w.find(" ") == -1:
+        head = w
+        tail = ""
+    else:
+        head = w[:w.find(" ")]
+        tail = w[w.find(" "):]
+    if has(word,"pret."):
+        head = what_is(word,"pret.")
+    elif head == "be":
+        if number == "sg." and person == "3rd":
+            head = "was"
+        else:
+            head = "were"
+    else:
+        if head[-1] == "y" and not head[-2] in ["a","e","i","o","u"]:
+            head = head[:-1] + "i"
+        if head[-1] == "e":
+            head = head + "d"
+        else:
+            head = head + "ed"
+    return head + tail
+    
+def Akkadian_preterite(w,person,number,gender):
+    base = "<Oopsie, you forgot the theme vowel>"
+    for theme_vowel in ["a","i","u"]:
+        if theme_vowel in brackets[w]:
+            base = w[0] + w[2] + theme_vowel + w[4]
+    if person == "3rd" and number == "sg.":
+        return "i" + base
+    if person == "2nd" and number == "sg." and gender == "m.":
+        return "ta" + base
+    if person == "2nd" and number == "sg." and gender == "f.":
+        return "ta" + base + "ī"
+    if person == "1st" and number == "sg.":
+        return "a" + base
+    if person == "3rd" and number == "pl." and gender == "m.":
+        return "i" + base + "ū"
+    if person == "3rd" and number == "pl." and gender == "f.":
+        return "i" + base + "ā"
+    if person == "2nd" and number == "pl.":
+        return "ta" + base + "ā"
+    if person == "1st" and number == "pl.":
+        return "ni" + base
+      
+def English_plural(w,num):
+    if num == "pl.":
+         if has(w,"pl."):
+              w = what_is(w,"pl.")
+         else:
+              if w[-1:] == "y" and not w[-2] in ["a","e","i","o","u"]:
+                   w = w[:-1] + "ies"
+              elif w[-1] in ["s","x","z"] or w[-2:] in ["sh","ch"]:
+                  w = w + "es"
+              else:
+                  w = w + "s"
+    return w
+    
+def Akkadian_noun(w,number,case,gender):
+    w = w[:-2]
+    if number == "pl." and gender == "f.":
+        if w[-1] == "t":
+            w = w[:-1]
+            if w[-1] == "a":
+                w = w[:-1]
+        w = w + "āt"
+    if number == "sg." or gender == "f.":
+        if case == "nom.":
+            w = w + "um"
+        elif case == "acc.":
+            w = w + "am"
+        elif case == "gen.":
+            w = w + "im"
+    else:
+        if case == "nom.":
+            w = w + "ū"
+        else:
+            w = w + "ī"
+    return w
+
+sentence_structure = random.choice(["Intransitive verb with subject",
+                                                        "Transitive verb with object",
+                                                        "Transitive verb with subject and object"])
+                                                        
+format[Akkadian] = standard_format("", True, ".")
+format[English] = standard_format("", True, ".")
+directive = "[T]"
+
+if sentence_structure == "Intransitive verb with subject":
+    verb = fetch("v.i.")
+    subject = fetch("n.")
+    number = random.choice(["sg.", "pl."])
+    if "mass noun" in subject.brackets:
+        number = "sg."
+    grammar(English, "the ", [subject, English_plural, number] , " ", [verb, English_preterite, "3rd", number])
+    grammar(Akkadian, [subject, Akkadian_noun, number, "nom.", [subject, gender]], " ", [verb, Akkadian_preterite, "3rd", number, [subject,gender]]) 
+    
+if sentence_structure == "Transitive verb with object":
+    verb = fetch("v.")
+    object = fetch("n.")
+    person = random.choice(["1st", "2nd", "3rd"])
+    number = random.choice(["sg.", "pl."])
+    gdr = random.choice(["m.", "f."])
+    number = random.choice(["sg.", "pl."])
+    if "mass noun" in object.brackets:
+        number = "sg."
+    grammar(English, [verb, pronoun, person, number, gdr], " " , [verb, English_preterite, person, number], " the ", [object, English_plural, number])
+    grammar(Akkadian, [object, Akkadian_noun, number, "acc.", [object, gender]], " ", [verb, Akkadian_preterite, person, number, gdr]) 
+
+if sentence_structure == "Transitive verb with subject and object":
+    verb = fetch("v.")
+    subject = fetch("n.")
+    object = fetch("n.") 
+    subject_number = random.choice(["sg.", "pl."])
+    object_number = random.choice(["sg.", "pl."])
+    if "mass noun" in subject.brackets:
+        subject_number = "sg."
+    if "mass noun" in object.brackets:
+        object_number = "sg."
+    grammar(English, "the ", [subject, English_plural, subject_number] , " ", [verb, English_preterite, "3rd", subject_number], " the ", [object, English_plural, object_number])
+    grammar(Akkadian, [subject, Akkadian_noun, subject_number, "nom.", [subject, gender]], " ", [object, Akkadian_noun, object_number, "acc.", [object, gender]] , " ", [verb, 
+Akkadian_preterite, "3rd", subject_number, [subject,gender]])

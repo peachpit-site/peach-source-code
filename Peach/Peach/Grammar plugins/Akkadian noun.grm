@@ -1,0 +1,52 @@
+def gender(word):
+    if len(word)>=6 and word[-3] == "t":
+        g = "f."
+    else:
+        g = "m."
+    if "m." in brackets[word]:
+        g = "m."
+    if "f." in brackets[word]:
+        g = "f."
+    return g
+
+def English_noun(w,num,case):
+    if num == "pl.":
+         if has(w,"pl."):
+              w = what_is(w,"pl.")
+         else:
+              if w[-1:] == "y" and not w[-2] in ["a","e","i","o","u"]:
+                   w = w[:-1] + "ies"
+              elif w[-1] in ["s","x","z"] or w[-2:] in ["sh","ch"]:
+                  w = w + "es"
+              else:
+                  w = w + "s"
+    w = w + " {"+case+"}"
+    return w
+    
+def Akkadian_noun(w,number,case,gender):
+    w = w[:-2]
+    if number == "pl." and gender == "f.":
+        if w[-1] == "t":
+            w = w[:-1]
+            if w[-1] == "a":
+                w = w[:-1]
+        w = w + "āt"
+        
+    suffix =  from_table(case,gender+" "+number, [
+    
+    					[	"m. sg.",	"m. pl.",	"f. sg.",		"f. pl"	],
+    	
+    	["nom.",		"um",		"ū",			"um",		"um"	],
+    	["acc.",			"am",		"ī",			"am",		"am"	],
+    	["gen.",		"im",		"ī",			"im",		"im"		],
+    	
+    	]);
+        
+    return w+suffix
+
+number = random.choice(["sg.", "pl."])
+if "mass noun" in entry.brackets:
+    number = "sg."
+case = random.choice(["nom.", "acc.", "gen."])    
+grammar(English, [entry, English_noun, number, case])
+grammar(Akkadian, [entry, Akkadian_noun, number, case, [entry, gender]])

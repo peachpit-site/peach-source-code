@@ -1,0 +1,232 @@
+French_vowels = ["a","e","i","o","u","à","è","ù","â","ê","î","ô","û","é"]
+
+def French_conjugate(verb, person, number):
+	stem = verb[:-2]
+	type = verb[-2:]
+	
+	if type == 'er' and person == '1' and number=='pl.':
+		if stem[-1]=='g':
+			stem = stem + 'e'
+		if stem[-1]=='c':
+			stem = stem[:-1]+'ç'
+	
+	if type == 'er':
+		
+		suffix = from_table(person,number,[
+		
+									[	'sg.',			'pl.'		],
+																
+					['1',				'e',			'ons'	],
+					['2',				'es',			'ez'		],
+					['3',				'e',			'ent'		],
+					
+					])
+					
+	if type == 'ir':
+		
+		suffix = from_table(person,number,[
+		
+									[	'sg.',			'pl.'			],
+																
+					['1',				'is',			'issons'	],
+					['2',				'is',			'issez'		],
+					['3',				'it',			'issent'	],
+					
+					])
+					
+	if type == 're':
+		
+		suffix = from_table(person,number,[
+		
+								[	'sg.',			'pl.'		],
+																
+					['1',			's',			'ons'	],
+					['2',			's',			'ez'		],
+					['3',			'',				'ent'		],
+					
+					])
+	
+	result = stem + suffix
+	if has(verb, person+number):
+		result = what_is(verb,person+number)
+		
+	return result
+	
+def French_pronoun(person, number, gender,apostrophe):
+	row = person
+	if person=='3':
+		row=row+' '+gender
+	
+	pronoun = from_table(row,number,[
+	
+								[	'sg.',			'pl.'		],
+	
+					['1',			'je ',			'nous '	],
+					['2',			'tu ',			'vous '	],
+					['3 m.',		'il ',			'ils '		],
+					['3 f.',		'elle ',		'elles '	],
+					
+					])
+					
+	if pronoun == 'je ' and apostrophe=='Y':
+		pronoun = "j'"
+	
+	return pronoun
+	
+
+def initial_vowel(w):
+	if starts_with(w, French_vowels):
+		return 'Y'
+	else:
+		return 'N'
+		
+def English_pronoun(person, number, gender):
+	row = person
+	if person=='3':
+		row=row+' '+gender
+	
+	return from_table(row,number,[
+	
+								[	'sg.',					'pl.'				],
+	
+					['1',			'I',					'we'				],
+					['2',			'you {sg.}',		'you {pl}'		],
+					['3 m.',		'he',					'they {m}'	],
+					['3 f.',		'she',				'they {f}'		],
+					
+					])
+
+def English_conjugate(verb, person, number):
+	if person == '3' and number == 'sg.':
+		if verb[-1] == "y" and not verb[-2] in ["a","e","i","o","u"]:
+                   verb = verb[:-1] + "ies"
+		elif ends_with(verb, "s", "x", "z", "ch", "sh"):
+                  verb = verb + "es"
+		else:
+                  verb = verb + "s"
+	return verb
+
+def English_pronoun_and_verb(verb, person, number, gender):
+	if ambiguity:
+		return English_pronoun('3', 'sg.', gender) + '_' + English_conjugate(verb, '3', 'sg.') + '/' + English_pronoun('3', 'pl.', gender) + '_' + English_conjugate(verb, '3', 'pl.')
+	else:
+		return English_pronoun(person, number, gender) + ' ' + English_conjugate(verb, person, number)
+
+def get_gender(word):
+    if word[-1] == "e":
+        g = "f."
+    else:
+        g = "m."
+    if "m." in brackets[word]:
+        g = "m."
+    if "f." in brackets[word]:
+        g = "f."
+    return g
+
+def English_noun(w,num):
+    if num == "pl.":
+         if has(w,"pl."):
+              w = what_is(w,"pl.")
+         else:
+              if w[-1] == "y" and not w[-2] in ["a","e","i","o","u"]:
+                   w = w[:-1] + "ies"
+              elif ends_with(w, "s", "x", "z", "ch", "sh"):
+                  w = w + "es"
+              else:
+                  w = w + "s"
+    return w
+    
+def French_noun(w,number,gender):
+    article = "unassigned"
+    if number == "pl.":
+        if w[-3:] == "eau":
+            w = w + "x"
+        else:
+            w = w + "s"
+    if number == "sg.":
+        if gender == "m.":
+            article = "le "
+        if gender == "f.":
+            article = "la "
+        if w[0] in ["a","e","i","o","u"]:
+            article = "l'"
+    else:
+        article = "les "
+    w = article + w
+    return w
+    
+def French_adjective(w,num,gen):
+    if (gen == "f."):
+        if has(w,"f."):
+            w=what_is(w,"f.")
+        elif (w[-1] != "e"):
+            w=w+"e"
+    if num == "pl.":
+        w = w + "s"
+    return w
+
+format[French] = standard_format("", True, ".")
+format[English] = standard_format("", True, ".")
+directive = "[T]"
+
+structure = random.choice(['PI','PVO','PVOA','SI', 'SAI','SVO','SAVO','SVOA','SAVOA'])
+if structure.count('V'):
+	verb = fetch('v')
+if structure.count('I'):
+	verb = fetch('vi')
+if structure.count('S'):
+	subj = fetch('n')
+if structure.count('O'):
+	obj = fetch('n')
+if structure.count('A'):
+	adjective = fetch('a')
+if structure.count('A')==2:
+	adjective2 = fetch('a')
+
+number = random.choice(['sg.', 'pl.'])
+if structure.count('P'):
+	person = random.choice(['1' , '2', '3'])
+	gender = random.choice(['m.', 'f.'])
+	first_verb = verb.words[French][0]
+	ambiguity =  	(questions == 'spoken' and
+						person == '3' and
+						not starts_with(first_verb, French_vowels) and
+                       	ends_with(first_verb, 'er') and
+						not has(first_verb, '3sg.') and
+						not has(first_verb, '3pl.'))
+if structure == 'PI':
+	grammar(English, [verb, English_pronoun_and_verb, person, number, gender])
+	grammar(French, [French_pronoun, person, number, gender,[verb, initial_vowel]],[verb, French_conjugate, person, number])
+
+if structure == 'PVO':
+	grammar(English, [verb, English_pronoun_and_verb, person, number, gender]," the ",[obj, English_noun, number])
+	grammar(French, [French_pronoun, person, number, gender,[verb, initial_vowel]],[verb, French_conjugate, person, number]," ",[obj, French_noun, number, [obj, get_gender]])
+
+if structure == 'PVOA':
+	grammar(English, [verb, English_pronoun_and_verb, person, number, gender]," the ",[adjective], " ",[obj, English_noun, number])
+	grammar(French, [French_pronoun, person, number, gender,[verb, initial_vowel]],[verb, French_conjugate, person, number]," ",[obj, French_noun, number, [obj, get_gender]]," ",[adjective,French_adjective, number, [obj, get_gender]])
+
+if structure == 'SI':
+	grammar(English, "the ",[subj, English_noun, number]," ",[verb, English_conjugate, "3", number])
+	grammar(French, [subj, French_noun, number, [subj, get_gender]]," ",[verb, French_conjugate, "3", number])
+	
+if structure == 'SAI':
+	grammar(English, "the ",[adjective], " ",[subj, English_noun, number]," ",[verb, English_conjugate, "3", number])
+	grammar(French, [subj, French_noun, number, [subj, get_gender]]," ",[adjective,French_adjective, number, [subj, get_gender]]," ",[verb, French_conjugate, "3", number])
+	
+if structure == 'SVO':
+	grammar(English, "the ",[subj, English_noun, number]," ",[verb, English_conjugate, "3", number]," the ",[obj, English_noun, number])
+	grammar(French, [subj, French_noun, number, [subj, get_gender]]," ",[verb, French_conjugate, "3", number]," ",[obj, French_noun, number, [obj, get_gender]])
+
+if structure == 'SAVO':
+	grammar(English, "the ",[adjective]," ",[subj, English_noun, number]," ",[verb, English_conjugate, "3", number]," the ",[obj, English_noun, number])
+	grammar(French, [subj, French_noun, number, [subj, get_gender]]," ",[adjective,French_adjective, number, [subj, get_gender]]," ",[verb, French_conjugate, "3", number]," ",[obj, French_noun, number, [obj, get_gender]])
+
+if structure == 'SVOA':
+	grammar(English, "the ",[subj, English_noun, number]," ",[verb, English_conjugate, "3", number]," the ",[adjective], " ",[obj, English_noun, number])
+	grammar(French, [subj, French_noun, number, [subj, get_gender]]," ",[verb, French_conjugate, "3", number]," ",[obj, French_noun, number, [obj, get_gender]]," ",[adjective,French_adjective, number, [obj, get_gender]])
+	
+if structure == 'SAVOA':
+	grammar(English, "the ",[adjective]," ",[subj, English_noun, number]," ",[verb, English_conjugate, "3", number]," the ",[adjective2], " ",[obj, English_noun, number])
+	grammar(French, [subj, French_noun, number, [subj, get_gender]]," ",[adjective,French_adjective, number, [subj, get_gender]]," ",[verb, French_conjugate, "3", number]," ",[obj, French_noun, number, [obj, get_gender]]," ",[adjective2,French_adjective, number, [obj, get_gender]])
+	

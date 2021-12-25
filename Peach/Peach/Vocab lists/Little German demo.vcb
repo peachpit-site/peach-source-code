@@ -1,0 +1,102 @@
+§#[SETT]
+¶
+¶#[SE1]
+¶
+§#[P1]
+¶
+#[Lang1] — German
+#[Dir1] — >
+#[Aud1] — 0x0407
+¶
+#[Lang2] — English
+#[Dir2] — >
+#[Aud2] — 0x0809
+¶
+§#[P2]
+¶
+¶German template, with keyboard settings all ready to hand, grammar plugins, audio settings, etc.
+¶
+§#[P3]
+¶
+¶If you type a, o, or u followed by an e this will produce the letter with an umlaut. Alt + s will give you an ß. Typing -> will get you the → symbol for representing stem vowel changes, if you are making your own vocab list and want it to interact with the grammar plugin. (In which case remember that Peach will not let you use the keyboard settings when typing in brackets: so if you want to type (a → ä) you will have to type the brackets last. We apologize for the inconvenience.)
+¶
+§#[P4]
+¶
+¶German:
+¶
+ae — ä
+oe — ö
+ue — ü
+ᵃs — ß
+-> — →
+¶
+§#[P5]
+¶
+¶English:
+¶
+¶No keyboard settings have been supplied for this language.
+¶
+§#[P6]
+¶
+#[DF] — How do you say “<W>” in <L>? : How do you say “<W>” in <L>?
+¶
+§#[P7]
+¶
+¶#[TO1] 
+¶
+○ #[O1] — 
+○ #[O2] — 
+○ #[O3] — 
+○ #[O4] — 
+¶
+¶#[TOX1]
+¶
+○ #[WSW1] — 
+○ #[WSS1] — 
+¶
+¶#[TOX2]
+¶
+○ #[WSW2] — 
+○ #[WSS2] — 
+¶
+¶#[TO2]
+¶
+○ #[WFW] — 
+○ #[WFF] — 
+¶
+¶#[TO3]
+¶
+● #[TO3Y] — 
+○ #[TO3N] — 
+¶
+¶#[TO4]
+¶
+#[N0100] — 
+¶
+§#[P8]
+¶
+#[POFont] — 
+#[TIFont] — 
+#[POSize3] — 
+#[BCOLOR] — DDFFDD
+¶
+§#[P9]
+¶
+□ #[Lo2] — 
+□ #[Lo3] — 
+□ #[Lo4] — 
+□ #[Lo5] — 
+□ #[Lo6] — 
+□ #[Lo7] — 
+□ #[Lo8] — 
+¶
+§Little German demo
+¶
+§[German sentence] German phrases
+¶
+¶This demo makes sentences out of the follwing vocabulary.
+¶
+[v] betrügen (pret. betrog) — deceive
+[v] schätzen — value
+[n] die Wassermelone — watermelon
+[n] das Meerschweinchen — guinea-pig

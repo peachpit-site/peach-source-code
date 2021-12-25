@@ -1,0 +1,61 @@
+vowels = ["a","e","i","o","u"]
+French_vowels = ["a","e","i","o","u","à", "è", "ù", "é"]
+
+def gender(word):
+    if word[-1] == "e":
+        g = "f."
+    else:
+        g = "m."
+    if "m." in brackets[word]:
+        g = "m."
+    if "f." in brackets[word]:
+        g = "f."
+    return g
+
+def English_noun(w,num):
+    if num == "pl.":
+         if has(w,"pl."):
+              w = what_is(w,"pl.")
+         else:
+              if w[-1:] == "y" and not w[-2] in vowels:
+                   w = w[:-1] + "ies"
+              elif ends_with(w, "s", "x","z","sh","ch"):
+                  w = w + "es"
+              else:
+                  w = w + "s"
+    return w
+    
+def French_noun(w,number,gender):
+    article = "unassigned"
+    if number == "pl.":
+        if w[-3:] == "eau":
+            w = w + "x"
+        else:
+            w = w + "s"
+    if number == "sg.":
+        if gender == "m.":
+            article = "le "
+        if gender == "f.":
+            article = "la "
+        if w[0] in French_vowels:
+            article = "l'"
+    else:
+        article = "les "
+    w = article + w
+    return w
+    
+def French_adjective(w,num,gen):
+    if (gen == "f."):
+        if has(w,"f."):
+            w=what_is(w,"f.")
+        elif (w[-1] != "e"):
+            w=w+"e"
+    if num == "pl.":
+        w = w + "s"
+    return w
+
+noun = fetch("n")
+adjective = fetch("a")
+number = random.choice(["sg.", "pl."])  
+grammar(English, "the ", [adjective], " ", [noun, English_noun, number])
+grammar(French, [noun, French_noun, number, [noun, gender]], " ", [adjective,French_adjective, number, [noun, gender]])
